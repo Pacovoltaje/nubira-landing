@@ -11,24 +11,26 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('../fotos/fondo.jpeg');
-  background-size: cover;
-  background-position: center;
+  color: #fff;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 2rem;
-  overflow: hidden;
+  background-image: url('../../fotos/fondo.jpeg'); /* <-- IMPORTANTE */
+  background-size: cover;
+  background-position: center;
 }
+
 
 .hero::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* capa oscura */
+  background-color: rgba(0, 0, 0, 0.25); /* transparencia más baja */
   z-index: 1;
 }
+
 
 .hero > * {
   position: relative;
