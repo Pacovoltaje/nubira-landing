@@ -38,7 +38,7 @@ body {
     padding: 4rem 2rem 2rem;
     text-align: center;
     z-index: 1;
-    background-image: url('../../fotos/bg-cloud.jpg');
+    background-image: url('../../fotos/bg-cloud.jpeg');
  /* ← esta ruta es clave */
     background-size: cover;
     background-position: center;
