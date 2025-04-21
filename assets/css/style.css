@@ -38,18 +38,17 @@ body {
     padding: 4rem 2rem 2rem;
     text-align: center;
     z-index: 1;
-    background-image: url('../../fotos/bg-cloud.jpg');
+    background-image: url('../../fotos/bg-cloud.jpg'); /* ← esta ruta es clave */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   
-  
   .hero::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7); /* Capa blanca translúcida */
+    background-color: rgba(255, 255, 255, 0.7); /* capa translúcida blanca */
     z-index: -1;
   }
   
@@ -57,6 +56,7 @@ body {
     position: relative;
     z-index: 2;
   }
+  
   
   
   /* Fondo animado */
