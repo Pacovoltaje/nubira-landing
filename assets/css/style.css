@@ -37,8 +37,7 @@ body {
     overflow: hidden;
     padding: 4rem 2rem 2rem;
     text-align: center;
-    z-index: 1;
-    background-image: url('../../fotos/bg-cloud.jpeg');
+    z-index: 1; 
  /* ← esta ruta es clave */
     background-size: cover;
     background-position: center;
@@ -48,15 +47,21 @@ body {
   .hero::before {
     content: "";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, #dbeafe, #f0f9ff, #ffffff);
-    opacity: 0.4;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      url('../../fotos/bg-cloud.jpeg'),
+      radial-gradient(circle at center, #dbeafe, #f0f9ff, #ffffff);
+    background-size: cover, 200% 200%;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
     animation: float-bg 20s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.8;
   }
+  
   .hero > * {
     position: relative;
     z-index: 2;
