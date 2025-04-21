@@ -1,12 +1,13 @@
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(to right, #f5f7fa, #ffffff);
-    color: #2D2D2D;
-    line-height: 1.6;
-    text-align: center;
-    padding: 2rem;
-  }
+  font-family: 'Outfit', sans-serif;
+  color: #2D2D2D;
+  background: linear-gradient(to right, #f5f7fa, #ffffff);
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+  padding: 2rem;
+}
+
 
   
   img {
@@ -81,17 +82,20 @@ body {
   }
   
   .hero h1 {
-    font-size: 2.5rem;
-    color: #1a1a1a;
+    font-size: 2.7rem;
+    color: #1b365d;
+    font-weight: 700;
     margin-bottom: 1rem;
   }
   
   .hero p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: #444;
     max-width: 700px;
     margin: 0 auto 2rem;
+    font-weight: 400;
   }
+  
   
   .cta-button {
     padding: 0.9rem 1.5rem;
