@@ -35,32 +35,70 @@ body {
   
   .hero {
     position: relative;
-    overflow: hidden;
-    padding: 4rem 2rem 2rem;
+    height: 100vh;
+    color: #fff;
     text-align: center;
-    z-index: 1;
-    border: 3px dashed red;
-    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    background-image: url('../fotos/FD81C334-B744-469E-9F9D-4F97D6E77DDB_1_105_c.jpeg');
+    background-size: cover;
+    background-position: center;
   }
   
- 
-  .hero::before {
-    content: "";
+  .hero .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-    background-image:
-    url('../../fotos/bg-cloud.jpeg'),
-    radial-gradient(circle at center, #dbeafe, #f0f9ff, #ffffff);
-    background-size: cover, 200% 200%;
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
-    animation: float-bg 20s ease-in-out infinite;
-    z-index: -1;
-    opacity: 0.8;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .hero img.logo {
+    width: 140px;
+    max-width: 80vw;
+    margin: 0 auto 1.5rem;
+    display: block;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .hero .subtext {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    z-index: 2;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .hero .cta-button {
+    padding: 0.9rem 1.5rem;
+    background-color: #0ACF83;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    position: relative;
+  }
+  
+  .hero .cta-button:hover {
+    background-color: #08b974;
+    transform: translateY(-2px);
   }
   
   .hero > * {
