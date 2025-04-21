@@ -19,11 +19,12 @@ body {
     padding: 4rem 2rem 2rem;
     text-align: center;
     z-index: 1;
-    background-image: url('fotos/bg-cloud.jpg');
-    /* Ajusta la ruta si es otra */
+    background-image: url('fotos/bg-cloud.jpg'); /* ✅ correcto */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+  
   }
   
   .hero::before {
