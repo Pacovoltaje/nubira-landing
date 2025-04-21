@@ -37,11 +37,14 @@ body {
     overflow: hidden;
     padding: 4rem 2rem 2rem;
     text-align: center;
-    z-index: 1; 
- /* ← esta ruta es clave */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    z-index: 1;
+    border: 3px dashed red;
+    min-height: 500px;
+  }
+  
+  .hero {
+    border: 3px dashed red;
+    min-height: 500px;
   }
   
   .hero::before {
@@ -52,8 +55,9 @@ body {
     right: 0;
     bottom: 0;
     background-image:
-      url('../../fotos/bg-cloud.jpeg'),
-      radial-gradient(circle at center, #dbeafe, #f0f9ff, #ffffff);
+    background-image:
+    url('../../fotos/bg-cloud.jpeg'),
+    radial-gradient(circle at center, #dbeafe, #f0f9ff, #ffffff);
     background-size: cover, 200% 200%;
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
