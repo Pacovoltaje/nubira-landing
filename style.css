@@ -5,327 +5,184 @@
   box-sizing: border-box;
 }
 
+/* Tipografía */
 body {
-  font-family: 'Open Sans', sans-serif; /* Fuente base */
-  color: #333;
-  background-color: #f4f4f4;
-  line-height: 1.6;
-  padding-top: 80px; /* Ajustamos el padding-top del body para la altura de la navbar */
+  font-family: 'Inter', sans-serif;
+  color: white;
+  background: url('https://images.unsplash.com/photo-1526403222631-909c9fbe5b71?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Overlay oscuro */
+  z-index: 0;
+}
+
+/* Para que todo el contenido esté sobre el overlay */
+main, nav, header {
+  position: relative;
+  z-index: 1;
 }
 
 /* Barra de navegación */
-.navbar {
+nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  background: transparent; /* Fondo completamente transparente inicialmente */
-  padding: 0.3rem 2rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid transparent; /* Inicialmente sin borde visible */
-  transition: background-color 0.3s ease, border-bottom-color 0.3s ease; /* Transición suave */
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navbar.scrolled {
-  background: white; /* Fondo blanco cuando se hace scroll */
-  border-bottom-color: #eee; /* Borde sutil cuando se hace scroll */
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
-.logo {
+nav ul {
+  list-style: none;
   display: flex;
-  align-items: center;
+  gap: 1.5rem;
 }
 
-.navbar .logo img {
-  max-height: 70px; /* Reducido para un aspecto más equilibrado */
-  margin-right: 1.5rem;
-  vertical-align: middle;
-}
-
-.logo-text {
-  font-size: 1.4rem; /* Tamaño más fino y sofisticado */
-  font-weight: 400;
-  color: #333;
-  letter-spacing: 0.4px;
-  font-family: 'Poppins', sans-serif; /* Fuente para el logo */
-  line-height: 70px;
-}
-
-.nav-links {
-  display: flex;
-  margin-left: auto;
-}
-
-.nav-links a {
-  color: #555;
+nav ul li a {
   text-decoration: none;
-  margin-left: 2rem;
+  color: #fff;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #07915e; /* Cambiamos solo el color al hacer hover */
-  text-decoration: none; /* Aseguramos que no haya subrayado */
-}
-
-/* Hero Section */
-.hero {
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('fotos/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg') no-repeat center center/cover;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  text-align: center;
-  position: relative;
-  color: #333;
-}
-
-.hero-overlay {
-  padding: 3rem;
-  border-radius: 12px;
-  background-color: transparent;
-}
-
-.hero-content h1 {
-  font-size: 2.6rem;
-  margin-bottom: 0.8rem;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.hero-content h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1.2rem;
-  font-weight: 600;
-  color: #555;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.hero-content p {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  color: #666;
-  line-height: 1.7;
-  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
-}
-
-/* Botones del Hero Section (Estilos mejorados) */
-.cta-buttons {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.btn-primary,
-.btn-secondary {
-  padding: 1rem 2.5rem;
-  border-radius: 10px;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  display: inline-block;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-primary {
-  background-color: #0ACF83;
-  color: #fff;
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: #07915e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  border: 2px solid #0ACF83;
+nav ul li a:hover {
   color: #0ACF83;
 }
 
-.btn-secondary:hover {
-  background-color: #0ACF83;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Servicios Section */
-.services-section {
-  padding-top: 1.5rem;
-  padding-bottom: 3rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+/* Hero principal */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
   text-align: center;
 }
 
-.services-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #333;
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
 }
 
-.services {
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #eee;
+  max-width: 700px;
+}
+
+/* Botones */
+.cta-button {
+  padding: 0.8rem 1.5rem;
+  background-color: #0ACF83;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #08b773;
+}
+
+.benefits-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.benefits-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
-.card {
-  background-color: #fff;
-  padding: 1.5rem;
+.beneficio-cloud {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 10px #ddd;
   text-align: left;
 }
 
-.card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
+.beneficio-cloud .icono {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.beneficio-cloud h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
   color: #333;
+  font-size: 1.8rem;
 }
 
-.card p {
-  margin-bottom: 0.6rem;
-  color: #555;
-  font-size: 0.95rem;
-}
-
-.card .price {
-  font-size: 1rem;
-  margin-top: 0.8rem;
-}
-
-/* About Me Section */
-.about-me-section {
-  display: flex; /* Para alinear imagen y texto lado a lado en pantallas más grandes */
-  flex-direction: column; /* Apilar en pantallas más pequeñas */
-  align-items: center; /* Centrar elementos verticalmente */
-  padding: 4rem 2rem; /* Espaciado alrededor de la sección */
-  max-width: 1000px; /* Ancho máximo para centrar el contenido en pantallas grandes */
-  margin: 0 auto; /* Centrar la sección en la página */
-}
-
-.about-me-image {
-  max-width: 200px; /* Ajusta el tamaño de la imagen */
-  border-radius: 50%; /* Hacer la imagen circular */
-  margin-bottom: 2rem; /* Espacio entre la imagen y el texto */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar la imagen */
-}
-
-.about-me-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%; /* Asegurar que la imagen dentro también sea circular */
-  display: block; /* Evitar espacio extra debajo de la imagen */
-}
-
-.about-me-text {
-  text-align: center; /* Centrar el texto inicialmente */
-}
-
-.about-me-text h2 {
-  font-size: 2.5rem; /* Título más prominente */
-  color: #333;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-.about-me-text h3 {
-  font-size: 1.2rem; /* Subtítulo para el nombre y profesión */
-  color: #555;
-  margin-bottom: 1.5rem;
-  font-style: italic; /* Un toque de estilo */
-}
-
-.about-me-text p {
+.beneficio-cloud p {
   line-height: 1.7;
-  margin-bottom: 1rem;
-  color: #666;
-  font-size: 1rem;
+  color: #555;
+  margin-bottom: 12px;
 }
 
-/* Media query para pantallas más grandes (alinear imagen a la izquierda) */
-@media (min-width: 768px) {
-  .about-me-section {
-    flex-direction: row; /* Alinear imagen y texto horizontalmente */
-    align-items: flex-start; /* Alinear al inicio verticalmente */
-    gap: 3rem; /* Espacio entre imagen y texto */
-    text-align: left; /* Alinear el texto a la izquierda */
-  }
-
-  .about-me-image {
-    margin-bottom: 0; /* Eliminar margen inferior en pantallas grandes */
-  }
-
-  .about-me-text {
-    text-align: left; /* Asegurar alineación a la izquierda en pantallas grandes */
-  }
+.beneficio-cloud .palabras-clave {
+  font-size: 0.95rem;
+  color: #777;
+  font-style: italic;
 }
 
-/* Certifications Section */
-.certifications {
-  padding: 3rem 2rem;
-  text-align: center;
-  background-color: #fff;
-}
-
-.certifications h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-.cert-logos {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  align-items: center; /* Centrar verticalmente los logos */
-  flex-wrap: wrap; /* Permitir que los logos pasen a la siguiente línea en pantallas pequeñas */
-}
-
-.cert-logos img {
-  max-width: 150px; /* Ajustar tamaño de los logos */
-  height: auto;
-}
-
-/* Footer */
 footer {
-  padding: 2rem 2rem;
   background-color: #333;
-  color: #f4f4f4;
-  text-align: center;
+  color: #fff;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  text-align: left;
 }
 
-.footer-info p {
-  margin-bottom: 0.3rem;
-  font-size: 0.85rem;
-}
-
-.footer-contact {
-  margin-top: 1.5rem;
+.footer-info p,
+.footer-contact p {
+  margin-bottom: 10px;
 }
 
 .footer-contact h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-}
-
-.footer-contact p {
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
 }
 
 .footer-trust {
-  margin-top: 2rem;
-  font-size: 0.75rem;
+  text-align: center;
 }
+
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
