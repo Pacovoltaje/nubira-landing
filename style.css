@@ -1,0 +1,331 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif; /* Fuente base */
+  color: #333;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+  padding-top: 80px; /* Ajustamos el padding-top del body para la altura de la navbar */
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  align-items: center;
+  background: transparent; /* Fondo completamente transparente inicialmente */
+  padding: 0.3rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid transparent; /* Inicialmente sin borde visible */
+  transition: background-color 0.3s ease, border-bottom-color 0.3s ease; /* Transición suave */
+}
+
+.navbar.scrolled {
+  background: white; /* Fondo blanco cuando se hace scroll */
+  border-bottom-color: #eee; /* Borde sutil cuando se hace scroll */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  max-height: 70px; /* Reducido para un aspecto más equilibrado */
+  margin-right: 1.5rem;
+  vertical-align: middle;
+}
+
+.logo-text {
+  font-size: 1.4rem; /* Tamaño más fino y sofisticado */
+  font-weight: 400;
+  color: #333;
+  letter-spacing: 0.4px;
+  font-family: 'Poppins', sans-serif; /* Fuente para el logo */
+  line-height: 70px;
+}
+
+.nav-links {
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-links a {
+  color: #555;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #07915e; /* Cambiamos solo el color al hacer hover */
+  text-decoration: none; /* Aseguramos que no haya subrayado */
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('fotos/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  color: #333;
+}
+
+.hero-overlay {
+  padding: 3rem;
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+.hero-content h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  color: #555;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #666;
+  line-height: 1.7;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones del Hero Section (Estilos mejorados) */
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: #0ACF83;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #07915e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #0ACF83;
+  color: #0ACF83;
+}
+
+.btn-secondary:hover {
+  background-color: #0ACF83;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Servicios Section */
+.services-section {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.card p {
+  margin-bottom: 0.6rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.card .price {
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+
+/* About Me Section */
+.about-me-section {
+  display: flex; /* Para alinear imagen y texto lado a lado en pantallas más grandes */
+  flex-direction: column; /* Apilar en pantallas más pequeñas */
+  align-items: center; /* Centrar elementos verticalmente */
+  padding: 4rem 2rem; /* Espaciado alrededor de la sección */
+  max-width: 1000px; /* Ancho máximo para centrar el contenido en pantallas grandes */
+  margin: 0 auto; /* Centrar la sección en la página */
+}
+
+.about-me-image {
+  max-width: 200px; /* Ajusta el tamaño de la imagen */
+  border-radius: 50%; /* Hacer la imagen circular */
+  margin-bottom: 2rem; /* Espacio entre la imagen y el texto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar la imagen */
+}
+
+.about-me-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* Asegurar que la imagen dentro también sea circular */
+  display: block; /* Evitar espacio extra debajo de la imagen */
+}
+
+.about-me-text {
+  text-align: center; /* Centrar el texto inicialmente */
+}
+
+.about-me-text h2 {
+  font-size: 2.5rem; /* Título más prominente */
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.about-me-text h3 {
+  font-size: 1.2rem; /* Subtítulo para el nombre y profesión */
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-style: italic; /* Un toque de estilo */
+}
+
+.about-me-text p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Media query para pantallas más grandes (alinear imagen a la izquierda) */
+@media (min-width: 768px) {
+  .about-me-section {
+    flex-direction: row; /* Alinear imagen y texto horizontalmente */
+    align-items: flex-start; /* Alinear al inicio verticalmente */
+    gap: 3rem; /* Espacio entre imagen y texto */
+    text-align: left; /* Alinear el texto a la izquierda */
+  }
+
+  .about-me-image {
+    margin-bottom: 0; /* Eliminar margen inferior en pantallas grandes */
+  }
+
+  .about-me-text {
+    text-align: left; /* Asegurar alineación a la izquierda en pantallas grandes */
+  }
+}
+
+/* Certifications Section */
+.certifications {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.certifications h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.cert-logos {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center; /* Centrar verticalmente los logos */
+  flex-wrap: wrap; /* Permitir que los logos pasen a la siguiente línea en pantallas pequeñas */
+}
+
+.cert-logos img {
+  max-width: 150px; /* Ajustar tamaño de los logos */
+  height: auto;
+}
+
+/* Footer */
+footer {
+  padding: 2rem 2rem;
+  background-color: #333;
+  color: #f4f4f4;
+  text-align: center;
+}
+
+.footer-info p {
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+}
+
+.footer-contact {
+  margin-top: 1.5rem;
+}
+
+.footer-contact h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-contact p {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.footer-trust {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+}
