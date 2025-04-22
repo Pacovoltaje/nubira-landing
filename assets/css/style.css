@@ -9,18 +9,11 @@ body {
 
 /* HERO SECTION */
 .hero {
-  position: relative;
-  height: 100vh;
-  color: #fff;
+  background-color: #ffffff;
+  padding: 4rem 2rem 2rem;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
-  background-image: url('../../fotos/fondo.jpeg'); /* <-- IMPORTANTE */
-  background-size: cover;
-  background-position: center;
 }
+
 
 
 .hero::before {
