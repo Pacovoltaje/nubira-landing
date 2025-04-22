@@ -1,3 +1,5 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
 /* Reset básico */
 * {
   margin: 0;
@@ -5,7 +7,7 @@
   box-sizing: border-box;
 }
 
-/* Tipografía */
+/* Tipografía y fondo */
 body {
   font-family: 'Inter', sans-serif;
   color: white;
@@ -23,14 +25,13 @@ body::before {
   z-index: 0;
 }
 
-/* Para que todo el contenido esté sobre el overlay */
-main, nav, header {
+main, nav, header, section {
   position: relative;
   z-index: 1;
 }
 
-/* Barra de navegación */
-nav {
+/* --- NAVBAR --- */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,30 +40,35 @@ nav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-nav .logo {
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-text {
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
 }
 
-nav ul {
-  list-style: none;
+.nav-links {
   display: flex;
   gap: 1.5rem;
 }
 
-nav ul li a {
+.nav-links a {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+.nav-links a:hover {
   color: #0ACF83;
 }
 
-/* Hero principal */
+/* --- HERO --- */
 .hero {
   display: flex;
   flex-direction: column;
@@ -79,40 +85,73 @@ nav ul li a:hover {
   color: #fff;
 }
 
+.hero h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: #eee;
   max-width: 700px;
+  margin-inline: auto;
 }
 
-/* Botones */
-.cta-button {
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* --- BOTONES --- */
+.btn-primary, .btn-secondary {
   padding: 0.8rem 1.5rem;
-  background-color: #0ACF83;
-  color: #fff;
   font-weight: bold;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
   text-decoration: none;
-  margin: 0 0.5rem;
   transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
+.btn-primary {
+  background-color: #0ACF83;
+  color: #fff;
+}
+
+.btn-primary:hover {
   background-color: #08b773;
 }
 
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #0ACF83;
+  color: #0ACF83;
+}
+
+.btn-secondary:hover {
+  background-color: #0ACF83;
+  color: #fff;
+}
+
+.btn-small {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+/* --- BENEFICIOS --- */
 .benefits-section {
   padding: 40px 20px;
   text-align: center;
   background-color: #fff;
+  color: #333;
 }
 
 .benefits-section h2 {
   font-size: 2.5rem;
-  color: #333;
   margin-bottom: 30px;
 }
 
@@ -143,13 +182,11 @@ nav ul li a:hover {
 .beneficio-cloud h3 {
   margin-top: 0;
   margin-bottom: 15px;
-  color: #333;
   font-size: 1.8rem;
 }
 
 .beneficio-cloud p {
   line-height: 1.7;
-  color: #555;
   margin-bottom: 12px;
 }
 
@@ -159,6 +196,115 @@ nav ul li a:hover {
   font-style: italic;
 }
 
+/* --- SERVICIOS --- */
+.services-section {
+  background-color: #f4f4f4;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #0ACF83;
+}
+
+.card .price {
+  font-weight: bold;
+  color: #333;
+  margin: 15px 0;
+}
+
+/* --- SOBRE MÍ --- */
+.about-me-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #fff;
+  color: #333;
+}
+
+.about-me-image {
+  flex: 1 1 300px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-me-image img {
+  max-width: 250px;
+  border-radius: 50%;
+  border: 4px solid #0ACF83;
+}
+
+.about-me-text {
+  flex: 2 1 500px;
+  padding-left: 40px;
+}
+
+.about-me-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-me-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.about-me-text p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* --- CERTIFICACIONES --- */
+.certifications {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.certifications h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.cert-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cert-logos img {
+  height: 80px;
+  object-fit: contain;
+}
+
+/* --- FOOTER --- */
 footer {
   background-color: #333;
   color: #fff;
@@ -182,7 +328,7 @@ footer {
 
 .footer-trust {
   text-align: center;
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  font-weight: bold;
 }
-
-
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
