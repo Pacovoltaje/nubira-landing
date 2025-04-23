@@ -157,30 +157,25 @@ main, nav, header, section {
     margin-inline: auto;
 }
 
-
-.hero h1, .hero h2, .hero p, .cta-buttons {
-  z-index: 2; /* Asegura que el texto y los botones estén sobre el overlay global */
-  position: relative; /* Asegura que el z-index funcione */
-}
-
+/* --- COLOR DE TEXTO DEL HERO: Modificado para mejorar contraste --- */
 .hero h1 {
   font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: #fff;
+  color: #333; /* Cambiado a gris oscuro */
 }
 
 .hero h2 {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #ddd;
+  color: #444; /* Cambiado a un gris oscuro ligeramente más claro */
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: #eee;
+  color: #555; /* Cambiado a un gris oscuro aún más claro */
   max-width: 700px;
   margin-inline: auto;
 }
@@ -189,6 +184,50 @@ main, nav, header, section {
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+/* --- BOTONES --- */
+.btn-primary, .btn-secondary {
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  cursor: pointer; /* Indica que es clickeable */
+  display: inline-block; /* Asegura que padding y margin funcionen correctamente */
+  text-align: center; /* Centra el texto dentro del botón */
+}
+
+.btn-primary {
+  background-color: #0ACF83;
+  color: #fff; /* Texto blanco para buen contraste */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.btn-primary:hover {
+  background-color: #08b773; /* Color más oscuro al pasar el cursor */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra un poco más pronunciada */
+  color: #fff; /* Asegura que el texto siga siendo blanco */
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #0ACF83;
+  color: #0ACF83; /* Texto del color del borde */
+  box-shadow: none; /* Sin sombra por defecto */
+}
+
+.btn-secondary:hover {
+  background-color: #0ACF83; /* Fondo del color del borde al pasar el cursor */
+  color: #fff; /* Texto blanco al pasar el cursor para buen contraste */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil al pasar el cursor */
+}
+
+.btn-small {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
 }
 
 /* --- BENEFICIOS SECTION --- */
