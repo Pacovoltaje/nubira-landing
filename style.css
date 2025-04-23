@@ -479,17 +479,17 @@ footer {
 }
 
 /* Sección de Contacto rediseñada */
-.footer-contact-redesigned {
+.footer-contact-rediseñada {
     margin-bottom: 20px; /* Espacio debajo si hay iconos sociales en .footer-top */
 }
 
-.footer-contact-redesigned h2 {
+.footer-contact-rediseñada h2 {
     font-size: 2rem; /* Tamaño de título */
     margin-bottom: 10px;
     color: #fff; /* Color blanco para el título */
 }
 
-.footer-contact-redesigned p {
+.footer-contact-rediseñada p {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 20px; /* Espacio antes del botón */
@@ -497,8 +497,8 @@ footer {
     margin-inline: auto;
 }
 
-/* Estilo para el botón "Contactar por Email" dentro de footer-contact-redesigned */
-.footer-contact-redesigned .cta-button.small {
+/* Estilo para el botón "Contactar por Email" dentro de footer-contact-rediseñada */
+.footer-contact-rediseñada .cta-button.small {
     display: inline-block;
     padding: 10px 25px; /* Ajustar padding */
     background-color: #e53935; /* Color de botón similar al ejemplo (rojo/rosa) */
@@ -511,47 +511,72 @@ footer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.footer-contact-redesigned .cta-button.small:hover {
+.footer-contact-rediseñada .cta-button.small:hover {
     background-color: #c62828; /* Tono más oscuro al pasar el cursor */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-
-/* Sección de enlaces */
-.footer-links-section {
-    display: flex;
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
-    justify-content: center; /* Centrar columnas de enlaces */
-    width: 100%;
-    max-width: 1000px; /* Ancho máximo */
-    margin-bottom: 30px; /* Espacio debajo */
-    gap: 30px; /* Espacio entre columnas de enlaces */
-}
-
-/* Contenedor de información rediseñado (Copyright, Diseñado por, Agenda cita) */
-.footer-info-redesigned {
-    /* Puedes ajustar el ancho si quieres que ocupe menos espacio en escritorio */
-    /* flex-basis: 250px; */
-    text-align: center; /* Centrar texto */
-}
-
-.footer-info-redesigned p {
-    margin-bottom: 8px; /* Espacio entre líneas */
+/* --- NUEVA REGLA: Sección centrada para Copyright, Diseñado por, Agenda cita --- */
+.footer-centered-info {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 1000px; /* Limitar ancho como otras secciones */
+    text-align: center; /* Centrar el texto dentro de este div */
+    margin-bottom: 20px; /* Espacio debajo */
+    color: #bbb; /* Color de texto para esta sección */
     font-size: 0.9rem;
-    color: #bbb; /* Color más claro para estos textos */
 }
 
-/* Estilo para el enlace "Agenda tu cita aquí" dentro de footer-info-rediseñado */
-.footer-info-redesigned a {
-    color: #0ACF83; /* Color de acento (tu verde) */
+.footer-centered-info p {
+    margin-bottom: 5px; /* Espacio entre líneas */
+}
+
+.footer-centered-info a {
+    color: #0ACF83; /* Color de acento para el enlace */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-info-redesigned a:hover {
+.footer-centered-info a:hover {
     color: #08b773;
     text-decoration: underline;
 }
+
+
+/* Sección de enlaces (si añades más columnas de enlaces) */
+/* Si no tienes más columnas de enlaces, puedes eliminar estas reglas */
+/*
+.footer-links-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 30px;
+    gap: 30px;
+}
+*/
+
+/* Contenedor de información rediseñado (Copyright, Diseñado por, Agenda cita) - ELIMINADO/REEMPLAZADO POR .footer-centered-info */
+/*
+.footer-info-rediseñada {
+    text-align: center;
+}
+.footer-info-rediseñada p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+.footer-info-rediseñada a {
+    color: #0ACF83;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-info-rediseñada a:hover {
+    color: #08b773;
+    text-decoration: underline;
+}
+*/
+
 
 /* Estilos si añades más columnas de enlaces (ej. Aviso Legal) */
 /*
@@ -598,7 +623,7 @@ footer {
 
 
 /* Frase de confianza rediseñada */
-.footer-trust-redesigned {
+.footer-trust-rediseñada {
     width: 100%;
     text-align: center; /* Centrar texto */
     font-size: 1rem;
@@ -616,15 +641,15 @@ footer {
         text-align: left; /* Alinear texto a la izquierda */
     }
 
-    .footer-contact-redesigned {
+    .footer-contact-rediseñada {
         margin-bottom: 0; /* Eliminar margen inferior en escritorio */
     }
 
-    .footer-contact-redesigned h2 {
+    .footer-contact-rediseñada h2 {
         font-size: 2.2rem; /* Ajustar tamaño de título en escritorio */
     }
 
-     .footer-contact-redesigned p {
+     .footer-contact-rediseñada p {
         margin-inline: 0; /* Eliminar margin-inline en escritorio */
      }
 
@@ -632,9 +657,26 @@ footer {
         justify-content: space-between; /* Espacio entre columnas de enlaces */
     }
 
-    .footer-info-rediseñado {
-        text-align: left; /* Alinear texto a la izquierda */
+    /* Contenedor de información rediseñado (Copyright, Diseñado por, Agenda cita) - ELIMINADO/REEMPLAZADO */
+    /*
+    .footer-info-rediseñada {
+        text-align: left;
     }
+    .footer-info-rediseñada p {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        color: #bbb;
+    }
+    .footer-info-rediseñada a {
+        color: #0ACF83;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .footer-info-rediseñada a:hover {
+        color: #08b773;
+        text-decoration: underline;
+    }
+    */
 
     /* Si añades columnas de enlaces, ajusta su alineación aquí */
     /* .footer-links-col { text-align: left; } */
@@ -644,6 +686,7 @@ footer {
         /* Si están en una fila separada abajo, mantener justify-content: center; */
     }
 }
+
 
 
 
