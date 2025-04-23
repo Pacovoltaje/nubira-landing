@@ -125,7 +125,7 @@
 
   <footer>
     <div class="footer-top">
-      <section class="footer-contact-redesigned">
+      <section class="footer-contact-rediseñada">
         <h2>Contacte con nosotros</h2>
         <p>Si tiene alguna duda o desea explorar cómo podemos ayudarle, no dude en contactarnos.</p>
         <a href="mailto:contacto@nubirasolutions.com" class="cta-button small" target="_blank">Contactar por Email</a>
@@ -150,6 +150,50 @@
     </div>
 
   </footer>
+
+  <script>
+    // Espera a que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', (event) => {
+
+        // Selecciona las secciones a las que quieres aplicar la transición
+        const sectionsToObserve = document.querySelectorAll('.benefits-section, .services-section');
+
+        // Opciones para el Intersection Observer
+        // root: null significa que se observa con respecto al viewport
+        // threshold: 0.1 significa que el callback se ejecutará cuando al menos el 10% de la sección sea visible
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+        };
+
+        // Crea un nuevo Intersection Observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // Si la sección es visible en el viewport
+                if (entry.isIntersecting) {
+                    // Añade la clase 'is-visible' para activar la transición CSS
+                    entry.target.classList.add('is-visible');
+                    // Deja de observar la sección una vez que se ha vuelto visible (opcional, si solo quieres que la animación ocurra una vez)
+                    // observer.unobserve(entry.target);
+                } else {
+                    // Opcional: Si quieres que la animación se repita al salir y volver a entrar en la vista
+                     entry.target.classList.remove('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        // Empieza a observar cada una de las secciones seleccionadas
+        sectionsToObserve.forEach(section => {
+            if (section) {
+                observer.observe(section);
+            }
+        });
+
+    });
+  </script>
+
 </body>
 </html>
+
+
 
