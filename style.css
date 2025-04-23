@@ -27,6 +27,8 @@ body {
   /* --- FIN PROPIEDADES DE FONDO GLOBAL --- */
   position: relative;
   min-height: 100vh;
+  /* Asegura que no haya scroll horizontal no deseado */
+  overflow-x: hidden;
 }
 
 /* Overlay oscuro global del body (para oscurecer la imagen de fondo global) */
@@ -718,6 +720,167 @@ footer {
         /* Si están en una fila separada abajo, mantener justify-content: center; */
     }
 }
+
+/* --- MEDIA QUERIES PARA RESPONSIVE --- */
+
+/* Estilos para pantallas pequeñas (hasta 767px de ancho) */
+@media (max-width: 767px) {
+
+    /* Ajustes generales de padding en secciones para móvil */
+    section {
+        padding: 30px 15px;
+    }
+
+    /* Navbar */
+    .hero-navigation {
+        flex-direction: column; /* Apilar elementos verticalmente */
+        align-items: center; /* Centrar elementos */
+        padding: 10px 15px; /* Ajustar padding */
+        position: static; /* No fija en móvil si se apila */
+        /* Si quieres que sea fija, necesitarás ajustar el padding-top del hero */
+    }
+
+    .hero-navigation .logo {
+        margin-bottom: 10px; /* Espacio debajo del logo */
+    }
+
+    .hero-navigation .nav-links {
+        flex-direction: column; /* Apilar enlaces verticalmente */
+        gap: 0.5rem; /* Reducir espacio entre enlaces */
+        margin-right: 0; /* Eliminar margen derecho */
+        margin-bottom: 10px; /* Espacio debajo de los enlaces */
+    }
+
+    .hero-navigation .social-links {
+        margin-bottom: 0; /* Eliminar margen inferior */
+    }
+
+    /* Hero Section */
+    .hero {
+        /* Ajusta este padding-top si la navbar es estática en móvil */
+        padding: 100px 15px 30px; /* Ejemplo de ajuste */
+        min-height: auto; /* Permitir que la altura se ajuste al contenido */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Reducir tamaño de fuente */
+    }
+
+    .hero h2 {
+        font-size: 1.4rem; /* Reducir tamaño de fuente */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Reducir tamaño de fuente */
+    }
+
+    .cta-buttons {
+        flex-direction: column; /* Apilar botones verticalmente */
+        gap: 0.8rem; /* Espacio entre botones apilados */
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 80%; /* Ancho fijo para botones apilados */
+        margin: 0 auto; /* Centrar botones */
+    }
+
+
+    /* Secciones con Grilla (Beneficios y Servicios) */
+    .benefits-grid,
+    .services {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 20px; /* Ajustar espacio entre tarjetas */
+        padding: 0; /* Eliminar padding si ya lo tiene la sección */
+    }
+
+    .beneficio-cloud,
+    .card {
+        padding: 20px; /* Ajustar padding interno de las tarjetas */
+    }
+
+    /* Sobre Mí Section */
+    .about-me-section {
+        flex-direction: column; /* Apilar imagen y texto */
+        align-items: center;
+    }
+
+    .about-me-image {
+        margin-bottom: 20px; /* Espacio debajo de la imagen */
+    }
+
+    .about-me-text {
+        padding-left: 0; /* Eliminar padding izquierdo */
+        text-align: center; /* Centrar texto */
+    }
+
+    .about-me-text h2 {
+        font-size: 1.8rem; /* Ajustar tamaño de título */
+    }
+
+    .about-me-text h3 {
+        font-size: 1rem; /* Ajustar tamaño de subtítulo */
+    }
+
+    /* Certificaciones Section */
+    .certifications h2 {
+        font-size: 1.8rem; /* Ajustar tamaño de título */
+    }
+
+    .cert-logos {
+        flex-direction: column; /* Apilar logos */
+        gap: 15px; /* Ajustar espacio */
+    }
+
+    .cert-logos img {
+        height: 60px; /* Reducir tamaño de logos */
+    }
+
+
+    /* Footer */
+    footer {
+        padding: 40px 15px; /* Ajustar padding */
+    }
+
+    .footer-top,
+    .footer-links-section,
+    .footer-social-bottom,
+    .footer-centered-info,
+    .footer-trust-rediseñada {
+        margin-bottom: 20px; /* Ajustar espacio entre secciones del footer */
+        padding-bottom: 15px; /* Ajustar padding inferior si tienen borde */
+        border-bottom: 1px solid #555; /* Asegurar separador si se apilan */
+        width: 100%; /* Ocupar todo el ancho */
+        max-width: none; /* Eliminar ancho máximo */
+        text-align: center; /* Centrar texto */
+    }
+
+    /* Eliminar borde inferior de la última sección si no se desea */
+    .footer-trust-rediseñada {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .footer-contact-rediseñada h2 {
+        font-size: 1.6rem; /* Ajustar tamaño de título */
+    }
+
+    .footer-contact-rediseñada p {
+        font-size: 0.9rem; /* Ajustar tamaño de párrafo */
+    }
+
+    .footer-centered-info p,
+    .footer-info-rediseñada p {
+        font-size: 0.8rem; /* Ajustar tamaño de texto pequeño */
+    }
+
+     .footer-trust-rediseñada {
+        font-size: 0.9rem; /* Ajustar tamaño de texto de confianza */
+     }
+
+}
+
+
 
 
 
