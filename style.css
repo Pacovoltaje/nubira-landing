@@ -893,7 +893,7 @@ footer {
     }
 
     .footer-centered-info a {
-        color: #0ACF83; /* Color de acento para el enlace */
+        color: #0ACF83;
         text-decoration: none;
         transition: color 0.3s ease;
     }
@@ -1183,16 +1183,16 @@ footer {
 
         /* --- NUEVA REGLA: Sección centrada para Copyright, Diseñado por, Agenda cita --- */
         .footer-centered-info {
-            width: 100%; /* Ocupa todo el ancho disponible */
-            max-width: 1000px; /* Limitar ancho como otras secciones */
-            text-align: center; /* Centrar el texto dentro de este div */
-            margin-bottom: 20px; /* Espacio debajo */
-            color: #bbb; /* Color de texto para esta sección */
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #bbb;
             font-size: 0.9rem;
         }
 
         .footer-centered-info p {
-            margin-bottom: 5px; /* Espacio entre líneas */
+            margin-bottom: 5px;
         }
 
         .footer-centered-info a {
@@ -1419,7 +1419,8 @@ footer {
                 height: 80px;
             }
 
-            /* --- FOOTER REDISEÑADO --- */
+
+            /* Footer */
             footer {
                 background-color: #222;
                 color: #eee;
@@ -1600,177 +1601,44 @@ footer {
 
             /* Media Query para pantallas más grandes (ajustar diseño en escritorio) */
             @media (min-width: 768px) {
-                /* --- AJUSTES NAVBAR PARA DESKTOP --- */
-                .hero-navigation {
-                    /* Asegura que la posición fija se mantenga en desktop */
-                    position: fixed;
-                    /* Ajustes de padding si es necesario para desktop */
-                    padding: 0 20px; /* Ajustado padding horizontal para que llegue a los bordes */
-                    /* Asegura que los elementos se distribuyan horizontalmente */
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: space-between;
-                    /* Eliminado max-width: 1200px; */
-                    max-width: none;
-                }
-
-                .hero-navigation .logo {
-                    margin-bottom: 0;
-                    flex-shrink: 0;
-                }
-
-                /* --- CONTENEDOR PARA ENLACES Y SOCIAL EN DESKTOP --- */
-                .hero-navigation .nav-and-social {
-                    display: flex; /* Contenedor flex */
-                    align-items: center; /* Alinear verticalmente al centro */
-                    gap: 1.5rem; /* Espacio entre los enlaces de navegación y los iconos sociales */
-                    /* Asegurar que este contenedor se alinee a la derecha */
-                    margin-left: auto; /* Esto empuja el contenedor a la derecha */
-                }
-
-
-                .hero-navigation .nav-links {
-                    display: flex;
-                    gap: 1.5rem;
-                    /* Eliminado margin-right ya que el gap en .nav-and-social lo maneja */
-                    /* margin-right: 1rem; */
-                    /* Eliminado flex-grow y justify-content ya que .nav-and-social controla la distribución */
-                    flex-grow: 0; /* Asegura que no crezca innecesariamente */
-                    justify-content: flex-start; /* Alinea los enlaces al inicio del contenedor flex */
-                }
-
-                .hero-navigation .social-links {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    /* Eliminado flex-shrink */
-                    /* flex-shrink: 0; */
-                }
-
-
-                .hero-navigation .nav-links a {
-                    text-decoration: none;
-                    color: #fff;
-                    font-weight: 500;
-                    transition: color 0.3s ease;
-                }
-
-                .hero-navigation .nav-links a:hover {
-                    color: #0ACF83;
-                }
-
-                /* --- AJUSTE PADDING-TOP DEL HERO PARA NAVBAR FIJA EN DESKTOP --- */
-                 .hero {
-                    /* Este padding-top debe ser igual o ligeramente mayor que la altura de la navbar en desktop */
-                    padding-top: 6rem; /* Ajusta este valor si la altura de la navbar en desktop cambia */
-                    padding-left: 2rem;
-                    padding-right: 2rem;
-                    padding-bottom: 4rem;
-                    min-height: 60vh;
-                 }
-
-
-                /* Ajustes generales de padding en secciones para desktop */
-                section {
-                    padding: 60px 20px;
-                }
-
-
-                /* Secciones con Grilla (Beneficios y Servicios) */
-                .benefits-grid,
-                .services {
-                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                    gap: 30px;
-                    padding: 20px;
-                }
-
-                .beneficio-cloud,
-                .card {
-                    padding: 30px;
-                }
-
-
-                /* Sobre Mí Section */
-                .about-me-section {
-                    flex-direction: row;
-                    align-items: center;
-                }
-
-                .about-me-image {
-                    margin-bottom: 0;
-                    margin-right: 40px;
-                }
-
-                .about-me-text {
-                    padding-left: 40px;
-                    text-align: left;
-                }
-
-
-                /* Certificaciones Section */
-                .certifications h2 {
-                    font-size: 2.2rem;
-                }
-
-                .cert-logos {
-                    flex-direction: row;
-                    gap: 20px;
-                }
-
-                .cert-logos img {
-                    height: 80px;
-                }
-
-                /* --- FOOTER REDISEÑADO --- */
-                footer {
-                    background-color: #222;
-                    color: #eee;
-                    padding: 60px 20px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    position: relative;
-                    z-index: 1;
-                    border-top: 5px solid #0ACF83;
-                }
+                /* ... estilos de desktop ... */
 
                 /* Contenedor superior (Contacto y quizás iconos sociales) */
                 .footer-top {
-                    display: flex;
-                    flex-direction: column; /* Apilados en móvil */
-                    align-items: center;
-                    width: 100%;
-                    max-width: 1000px; /* Ancho máximo similar al contenido principal */
-                    margin-bottom: 30px; /* Espacio debajo de esta sección */
-                    padding-bottom: 20px;
-                    border-bottom: 1px solid #555; /* Separador visual */
-                    text-align: center; /* Centrar texto en móvil */
+                    /* ... otras propiedades ... */
+                    /* Asegura que la sección de contacto esté a la izquierda */
+                    justify-content: flex-start; /* Alinea los elementos al inicio */
+                    /* Si hay otros elementos en footer-top, puedes usar gap o margin-right para separarlos */
+                    gap: 40px; /* Ejemplo: espacio entre contacto y otros elementos en footer-top */
                 }
 
                 /* Sección de Contacto rediseñada */
                 .footer-contact-rediseñada {
-                    margin-bottom: 20px; /* Espacio debajo si hay iconos sociales en .footer-top */
+                     /* Eliminar flex-grow si se había añadido antes para que no ocupe espacio innecesario */
+                     flex-grow: 0;
+                     /* Puedes ajustar un ancho si quieres que ocupe una proporción específica */
+                     /* flex-basis: 400px; */
+                     text-align: left; /* Asegurar alineación a la izquierda */
                 }
 
                 .footer-contact-rediseñada h2 {
-                    font-size: 2rem; /* Tamaño de título */
+                    font-size: 2.2rem;
                     margin-bottom: 10px;
-                    color: #fff; /* Color blanco para el título */
+                    color: #fff;
                 }
 
                 .footer-contact-rediseñada p {
                     font-size: 1rem;
                     line-height: 1.5;
-                    margin-bottom: 20px; /* Espacio antes del botón */
-                    max-width: 600px; /* Limitar ancho del párrafo */
-                    margin-inline: auto;
+                    margin-bottom: 20px;
+                    max-width: 600px;
+                    margin-inline: 0;
                 }
 
-                /* Estilo para el botón "Contactar por Email" dentro de footer-contact-rediseñada */
                 .footer-contact-rediseñada .cta-button.small {
                     display: inline-block;
-                    padding: 10px 25px; /* Ajustar padding */
-                    background-color: #e53935; /* Color de botón similar al ejemplo (rojo/rosa) */
+                    padding: 10px 25px;
+                    background-color: #e53935;
                     color: #fff;
                     border: none;
                     border-radius: 5px;
@@ -1785,182 +1653,205 @@ footer {
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
                 }
 
-                /* --- NUEVA REGLA: Sección centrada para Copyright, Diseñado por, Agenda cita --- */
-                .footer-centered-info {
-                    width: 100%;
-                    max-width: 1000px;
-                    text-align: center;
-                    margin-bottom: 20px;
-                    color: #bbb;
-                    font-size: 0.9rem;
-                }
+                /* ... resto de estilos de desktop ... */
 
-                .footer-centered-info p {
-                    margin-bottom: 5px;
-                }
-
-                .footer-centered-info a {
-                    color: #0ACF83;
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                }
-
-                .footer-centered-info a:hover {
-                    color: #08b773;
-                    text-decoration: underline;
-                }
-
-
-                /* Sección de enlaces (si añades más columnas de enlaces) */
-                /* Si no tienes más columnas de enlaces, puedes eliminar estas reglas */
-                /*
-                .footer-links-section {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    width: 100%;
-                    max-width: 1000px;
-                    margin-bottom: 30px;
-                    gap: 30px;
-                }
-                */
-
-                /* Contenedor de información rediseñado (Copyright, Diseñado por, Agenda cita) - ELIMINADO/REEMPLAZADO POR .footer-centered-info */
-                /*
-                .footer-info-rediseñada {
-                    text-align: center;
-                }
-                .footer-info-rediseñada p {
-                    margin-bottom: 8px;
-                    font-size: 0.9rem;
-                    color: #bbb;
-                }
-                .footer-info-rediseñada a {
-                    color: #0ACF83;
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                }
-                .footer-info-rediseñada a:hover {
-                    color: #08b773;
-                    text-decoration: underline;
-                }
-                */
-
-                /* Estilos si añades más columnas de enlaces (ej. Aviso Legal) */
-                /*
-                .footer-links-col ul {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                }
-                .footer-links-col ul li {
-                    margin-bottom: 8px;
-                }
-                .footer-links-col ul li a {
-                     color: #eee;
-                     text-decoration: none;
-                     font-size: 0.9rem;
-                     transition: color 0.3s ease;
-}
-.footer-links-col ul li a:hover {
-    color: #0ACF83;
-    text-decoration: underline;
-}
-*/
-
-
-                /* Sección de iconos sociales (si están abajo) */
-                .footer-social-bottom {
-                    display: flex;
-                    justify-content: center; /* Centrar iconos */
-                    gap: 15px; /* Espacio entre iconos */
-                    margin-bottom: 20px; /* Espacio debajo */
-                }
-
-                .footer-social-bottom a img {
-                  /* --- TAMAÑO DEL ICONO SOCIAL EN EL FOOTER: Aumentado a 50px --- */
-                  height: 50px; /* Ajustado a 50px */
-                  width: auto;
-                  transition: opacity 0.3s ease, transform 0.3s ease;
-                }
-
-                .footer-social-bottom a:hover img {
-                    opacity: 0.8;
-                    transform: scale(1.1);
-                }
-
-
-                /* Frase de confianza rediseñada */
-                .footer-trust-rediseñada {
-                    width: 100%;
-                    text-align: center; /* Centrar texto */
-                    font-size: 1rem;
-                    color: #bbb; /* Color más claro */
-                    margin-top: 10px; /* Espacio arriba */
-                }
-
-
-                /* Media Query para pantallas más grandes (ajustar diseño en escritorio) */
-                @media (min-width: 768px) {
-                    /* ... estilos de desktop ... */
-
-                    /* Contenedor superior (Contacto y quizás iconos sociales) */
-                    .footer-top {
-                        /* ... otras propiedades ... */
-                        /* Asegura que la sección de contacto esté a la izquierda */
-                        justify-content: flex-start; /* Alinea los elementos al inicio */
-                        /* Si hay otros elementos en footer-top, puedes usar gap o margin-right para separarlos */
-                        gap: 40px; /* Ejemplo: espacio entre contacto y otros elementos en footer-top */
-                    }
-
-                    /* Sección de Contacto rediseñada */
-                    .footer-contact-rediseñada {
-                         /* Eliminar flex-grow si se había añadido antes para que no ocupe espacio innecesario */
-                         flex-grow: 0;
-                         /* Puedes ajustar un ancho si quieres que ocupe una proporción específica */
-                         /* flex-basis: 400px; */
-                         text-align: left; /* Asegurar alineación a la izquierda */
-                    }
-
-                    .footer-contact-rediseñada h2 {
-                        font-size: 2.2rem;
-                        margin-bottom: 10px;
-                        color: #fff;
-                    }
-
-                    .footer-contact-rediseñada p {
-                        font-size: 1rem;
-                        line-height: 1.5;
-                        margin-bottom: 20px;
-                        max-width: 600px;
-                        margin-inline: 0;
-                    }
-
-                    .footer-contact-rediseñada .cta-button.small {
-                        display: inline-block;
-                        padding: 10px 25px;
-                        background-color: #e53935;
-                        color: #fff;
-                        border: none;
-                        border-radius: 5px;
-                        text-decoration: none;
-                        font-weight: bold;
-                        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-                    }
-
-                    .footer-contact-rediseñada .cta-button.small:hover {
-                        background-color: #c62828;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                    }
-
-                    /* ... resto de estilos de desktop ... */
-
-                }
-
-                /* --- MEDIA QUERIES PARA RESPONSIVE --- */
-                /* ... estilos para móvil ... */
             }
+
+            /* --- MEDIA QUERIES PARA RESPONSIVE --- */
+            /* Estilos para pantallas pequeñas (hasta 767px de ancho) */
+            @media (max-width: 767px) {
+
+                /* Ajustes generales de padding en secciones para móvil */
+                section {
+                    padding: 30px 15px;
+                }
+
+                /* Navbar */
+                .hero-navigation {
+                    flex-direction: column; /* Apilar elementos verticalmente */
+                    align-items: center; /* Centrar elementos */
+                    padding: 10px 15px; /* Ajustar padding */
+                    position: static; /* No fija en móvil */
+                    /* Eliminado max-width en móvil */
+                    max-width: none;
+                    width: 100%; /* Ocupar todo el ancho */
+                }
+
+                .hero-navigation .logo {
+                    margin-bottom: 10px; /* Espacio debajo del logo */
+                    /* Asegurar que el logo no se desborde */
+                    max-width: 100%;
+                    height: auto;
+                }
+
+                /* --- CONTENEDOR PARA ENLACES Y SOCIAL EN MÓVIL --- */
+                .hero-navigation .nav-and-social {
+                    flex-direction: column; /* Apilar enlaces y social verticalmente */
+                    gap: 1rem; /* Espacio entre enlaces/social */
+                    margin-left: 0; /* Eliminar margin-left */
+                    width: 100%; /* Ocupar todo el ancho */
+                    align-items: center; /* Centrar contenido */
+                }
+
+
+                .hero-navigation .nav-links {
+                    flex-direction: column; /* Apilar enlaces verticalmente */
+                    gap: 0.5rem; /* Reducir espacio entre enlaces */
+                    margin-right: 0; /* Eliminar margen derecho */
+                    /* margin-bottom: 10px; */ /* Espacio debajo de los enlaces */
+                    align-items: center; /* Centrar enlaces */
+                }
+
+                .hero-navigation .social-links {
+                    margin-bottom: 0; /* Eliminar margen inferior */
+                    /* Asegurar que los iconos sociales no se desborden */
+                    max-width: 100%;
+                    justify-content: center; /* Centrar iconos */
+                }
+
+                .hero-navigation .social-links a img {
+                     height: 30px; /* Ajustar tamaño de iconos en móvil */
+                }
+
+
+                .hero-navigation .nav-links a {
+                     /* Asegurar que los enlaces no se desborden */
+                     max-width: 100%;
+                     overflow: hidden;
+                     text-overflow: ellipsis; /* Añadir puntos suspensivos si el texto es muy largo */
+                     white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+                }
+
+
+                /* Hero Section */
+                .hero {
+                    /* --- AJUSTE PADDING-TOP DEL HERO PARA NAVBAR ESTÁTICA EN MÓVIL --- */
+                    /* Este padding-top debe ser mayor que la altura de la navbar apilada en móvil */
+                    padding-top: 150px; /* Aumentado el padding-top. Ajusta este valor según la altura real de tu navbar en móvil. */
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    padding-bottom: 30px;
+                    min-height: auto;
+                }
+
+                .hero h1 {
+                    font-size: 2rem;
+                }
+
+                .hero h2 {
+                    font-size: 1.4rem;
+                }
+
+                .hero p {
+                    font-size: 1rem;
+                }
+
+                .cta-buttons {
+                    flex-direction: column;
+                    gap: 0.8rem;
+                }
+
+                .btn-primary, .btn-secondary {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+
+
+                /* Secciones con Grilla (Beneficios y Servicios) */
+                .benefits-grid,
+                .services {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                    padding: 0;
+                }
+
+                .beneficio-cloud,
+                .card {
+                    padding: 20px;
+                }
+
+                /* Sobre Mí Section */
+                .about-me-section {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .about-me-image {
+                    margin-bottom: 20px;
+                    margin-right: 0; /* Eliminar margen derecho */
+                }
+
+                .about-me-text {
+                    padding-left: 0;
+                    text-align: center;
+                }
+
+                .about-me-text h2 {
+                    font-size: 1.8rem;
+                }
+
+                .about-me-text h3 {
+                    font-size: 1rem;
+                }
+
+                /* Certificaciones Section */
+                .certifications h2 {
+                    font-size: 1.8rem;
+                }
+
+                .cert-logos {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                .cert-logos img {
+                    height: 60px;
+                }
+
+
+                /* Footer */
+                footer {
+                    padding: 40px 15px;
+                }
+
+                .footer-top,
+                .footer-links-section,
+                .footer-social-bottom,
+                .footer-centered-info,
+                .footer-trust-rediseñada {
+                    margin-bottom: 20px;
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid #555;
+                    width: 100%;
+                    max-width: none;
+                    text-align: center;
+                }
+
+                .footer-trust-rediseñada {
+                    border-bottom: none;
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                }
+
+                .footer-contact-rediseñada h2 {
+                    font-size: 1.6rem;
+                }
+
+                .footer-contact-rediseñada p {
+                    font-size: 0.9rem;
+                }
+
+                .footer-centered-info p,
+                .footer-info-rediseñada p {
+                    font-size: 0.8rem;
+                }
+
+                 .footer-trust-rediseñada {
+                    font-size: 0.9rem;
+                 }
+
+            }
+        }
 
 
 
