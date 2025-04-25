@@ -814,8 +814,7 @@ footer {
         height: 80px;
     }
 
-
-    /* Footer */
+    /* --- FOOTER REDISEÑADO --- */
     footer {
         background-color: #222;
         color: #eee;
@@ -1134,45 +1133,40 @@ footer {
         /* Contenedor superior (Contacto y quizás iconos sociales) */
         .footer-top {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between; /* Espacio entre elementos */
-            align-items: flex-start;
-            width: 100%; /* Ocupar todo el ancho disponible */
-            /* Eliminado max-width */
-            max-width: none;
-            margin-bottom: 30px;
+            flex-direction: column; /* Apilados en móvil */
+            align-items: center;
+            width: 100%;
+            max-width: 1000px; /* Ancho máximo similar al contenido principal */
+            margin-bottom: 30px; /* Espacio debajo de esta sección */
             padding-bottom: 20px;
-            border-bottom: 1px solid #555;
-            text-align: left; /* Alinear texto a la izquierda */
+            border-bottom: 1px solid #555; /* Separador visual */
+            text-align: center; /* Centrar texto en móvil */
         }
 
         /* Sección de Contacto rediseñada */
         .footer-contact-rediseñada {
-            margin-bottom: 0;
-            flex-grow: 0;
-            text-align: left; /* Asegurar alineación a la izquierda */
-            /* Puedes ajustar un ancho si quieres que ocupe una proporción específica */
-            /* flex-basis: 400px; */
+            margin-bottom: 20px; /* Espacio debajo si hay iconos sociales en .footer-top */
         }
 
         .footer-contact-rediseñada h2 {
-            font-size: 2.2rem;
+            font-size: 2rem; /* Tamaño de título */
             margin-bottom: 10px;
-            color: #fff;
+            color: #fff; /* Color blanco para el título */
         }
 
         .footer-contact-rediseñada p {
             font-size: 1rem;
             line-height: 1.5;
-            margin-bottom: 20px;
-            max-width: 600px;
-            margin-inline: 0;
+            margin-bottom: 20px; /* Espacio antes del botón */
+            max-width: 600px; /* Limitar ancho del párrafo */
+            margin-inline: auto;
         }
 
+        /* Estilo para el botón "Contactar por Email" dentro de footer-contact-rediseñada */
         .footer-contact-rediseñada .cta-button.small {
             display: inline-block;
-            padding: 10px 25px;
-            background-color: #e53935;
+            padding: 10px 25px; /* Ajustar padding */
+            background-color: #e53935; /* Color de botón similar al ejemplo (rojo/rosa) */
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -1189,16 +1183,16 @@ footer {
 
         /* --- NUEVA REGLA: Sección centrada para Copyright, Diseñado por, Agenda cita --- */
         .footer-centered-info {
-            width: 100%;
-            max-width: 1000px;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #bbb;
+            width: 100%; /* Ocupa todo el ancho disponible */
+            max-width: 1000px; /* Limitar ancho como otras secciones */
+            text-align: center; /* Centrar el texto dentro de este div */
+            margin-bottom: 20px; /* Espacio debajo */
+            color: #bbb; /* Color de texto para esta sección */
             font-size: 0.9rem;
         }
 
         .footer-centered-info p {
-            margin-bottom: 5px;
+            margin-bottom: 5px; /* Espacio entre líneas */
         }
 
         .footer-centered-info a {
@@ -1425,8 +1419,7 @@ footer {
                 height: 80px;
             }
 
-
-            /* Footer */
+            /* --- FOOTER REDISEÑADO --- */
             footer {
                 background-color: #222;
                 color: #eee;
@@ -1492,16 +1485,16 @@ footer {
 
             /* --- NUEVA REGLA: Sección centrada para Copyright, Diseñado por, Agenda cita --- */
             .footer-centered-info {
-                width: 100%; /* Ocupa todo el ancho disponible */
-                max-width: 1000px; /* Limitar ancho como otras secciones */
-                text-align: center; /* Centrar el texto dentro de este div */
-                margin-bottom: 20px; /* Espacio debajo */
-                color: #bbb; /* Color de texto para esta sección */
+                width: 100%;
+                max-width: 1000px;
+                text-align: center;
+                margin-bottom: 20px;
+                color: #bbb;
                 font-size: 0.9rem;
             }
 
             .footer-centered-info p {
-                margin-bottom: 5px; /* Espacio entre líneas */
+                margin-bottom: 5px;
             }
 
             .footer-centered-info a {
@@ -1728,8 +1721,7 @@ footer {
                     height: 80px;
                 }
 
-
-                /* Footer */
+                /* --- FOOTER REDISEÑADO --- */
                 footer {
                     background-color: #222;
                     color: #eee;
@@ -1745,45 +1737,40 @@ footer {
                 /* Contenedor superior (Contacto y quizás iconos sociales) */
                 .footer-top {
                     display: flex;
-                    flex-direction: row;
-                    justify-content: space-between; /* Espacio entre elementos */
-                    align-items: flex-start;
-                    width: 100%; /* Ocupar todo el ancho disponible */
-                    /* Eliminado max-width */
-                    max-width: none;
-                    margin-bottom: 30px;
+                    flex-direction: column; /* Apilados en móvil */
+                    align-items: center;
+                    width: 100%;
+                    max-width: 1000px; /* Ancho máximo similar al contenido principal */
+                    margin-bottom: 30px; /* Espacio debajo de esta sección */
                     padding-bottom: 20px;
-                    border-bottom: 1px solid #555;
-                    text-align: left; /* Alinear texto a la izquierda */
+                    border-bottom: 1px solid #555; /* Separador visual */
+                    text-align: center; /* Centrar texto en móvil */
                 }
 
                 /* Sección de Contacto rediseñada */
                 .footer-contact-rediseñada {
-                    margin-bottom: 0;
-                    flex-grow: 0;
-                    text-align: left; /* Asegurar alineación a la izquierda */
-                    /* Puedes ajustar un ancho si quieres que ocupe una proporción específica */
-                    /* flex-basis: 400px; */
+                    margin-bottom: 20px; /* Espacio debajo si hay iconos sociales en .footer-top */
                 }
 
                 .footer-contact-rediseñada h2 {
-                    font-size: 2.2rem;
+                    font-size: 2rem; /* Tamaño de título */
                     margin-bottom: 10px;
-                    color: #fff;
+                    color: #fff; /* Color blanco para el título */
                 }
 
                 .footer-contact-rediseñada p {
                     font-size: 1rem;
                     line-height: 1.5;
-                    margin-bottom: 20px;
-                    max-width: 600px;
-                    margin-inline: 0;
+                    margin-bottom: 20px; /* Espacio antes del botón */
+                    max-width: 600px; /* Limitar ancho del párrafo */
+                    margin-inline: auto;
                 }
 
+                /* Estilo para el botón "Contactar por Email" dentro de footer-contact-rediseñada */
                 .footer-contact-rediseñada .cta-button.small {
                     display: inline-block;
-                    padding: 10px 25px;
-                    background-color: #e53935;
+                    padding: 10px 25px; /* Ajustar padding */
+                    background-color: #e53935; /* Color de botón similar al ejemplo (rojo/rosa) */
                     color: #fff;
                     border: none;
                     border-radius: 5px;
