@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nubira Solutions</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -23,11 +23,7 @@
         <a href="#about">Sobre Nosotros</a>
         <a href="#contact">Contacto</a>
       </nav>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/monicaescobarcuesta/" target="_blank" aria-label="Perfil de LinkedIn de Nubira Solutions">
-          <img src="images/icons8-linkedin-100.png" alt="LinkedIn">
-        </a>
-      </div>
+
       <div class="menu-toggle">
         <span></span>
         <span></span>
@@ -42,7 +38,7 @@
         <div class="aws-logo-hero">
           <img src="images/Amazon_Web_Services_Logo.svg.png" alt="AWS Partner" class="aws-logo">
         </div>
-        <h1>Expertos en AWS</h1>
+        <h1>Expertos en <span class="aws-highlight">AWS</span></h1>
         <h2>¿Tu factura de la nube se dispara?</h2>
         <p>Te ayudamos a gastar menos y dormir tranquilo, sin poner en riesgo tu infraestructura con nuestros especialistas en FinOps y Seguridad.</p>
         <div class="cta-buttons">
@@ -116,7 +112,7 @@
           <li>Reserved Instances Optimization</li>
           <li>Tagging Strategy</li>
         </ul>
-        <p class="price">Oferta limitada: primera auditoría gratuita si detectamos ahorros en tu infraestructura de al menos el 10% de tu factura</p>
+        <p class="price">Solo pagas si encontramos al menos un 10 % de ahorro en tu factura. Si no, la auditoría es totalmente gratuita.</p>
         <a href="https://calendly.com/contact-nubirasolutions/30min" target="_blank" class="btn-secondary btn-small">Solicitar Assessment Gratuito</a>
       </div>
       <div class="card">
@@ -129,7 +125,8 @@
           <li>Compliance Framework Setup</li>
           <li>Incident Response Plan</li>
         </ul>
-        <p class="price">Oferta limitada: primera auditoría gratuita si detectamos ahorros en tu infraestructura de al menos el 10% de tu factura</p>
+        <div style="height: 24px;"></div>
+        <p class="price">Pago vinculado a resultados: sin hallazgos significativos, la evaluación es gratuita.</p>
         <a href="https://calendly.com/contact-nubirasolutions/30min" target="_blank" class="btn-secondary btn-small">Solicitar Assessment Gratuito</a>
       </div>
       <div class="card featured">
@@ -142,8 +139,8 @@
           <li>Implementación coordinada</li>
           <li>Soporte post-implementación</li>
         </ul>
-        <p class="price combo-offer">Oferta limitada: primera auditoría gratuita si detectamos ahorros en tu infraestructura de al menos el 10% de tu factura</p>
-        <a href="https://calendly.com/contact-nubirasolutions/30min" target="_blank" class="btn-primary btn-small">Solicitar Combo</a>
+        <p class="price combo-offer">Pago vinculado a resultados: solo pagas si encontramos al menos un 10 % de ahorro o vulnerabilidades significativas. Si no, la auditoría combinada es gratuita.</p>
+        <a href="https://calendly.com/contact-nubirasolutions/30min" target="_blank" class="btn-primary btn-small">Solicitar Combo Gratuito</a>
       </div>
     </div>
   </section>
@@ -340,9 +337,10 @@
         <h2>📧 Mantente al día con las mejores prácticas</h2>
         <p>Recibe tips exclusivos sobre FinOps, Security y optimización AWS directamente en tu inbox</p>
         
-        <form class="newsletter-form" id="newsletterForm">
+        <form class="newsletter-form" id="newsletterForm" action="https://nubirasolutions.us5.list-manage.com/subscribe/post?u=b54ea812b8835e2cee1cad2c2&id=12d947cac5&f_id=0003bdedf0" method="post">
           <div class="form-group">
-            <input type="email" id="email" placeholder="tu@email.com" required>
+            <input type="email" id="email" name="EMAIL" placeholder="tu@email.com" required>
+            <input type="text" name="b_b54ea812b8835e2cee1cad2c2_12d947cac5" tabindex="-1" value="" style="position: absolute; left: -5000px;" aria-hidden="true">
             <button type="submit" class="btn-primary">Suscribirse</button>
           </div>
           <p class="newsletter-privacy">No spam. Puedes darte de baja en cualquier momento.</p>
@@ -372,7 +370,8 @@
         <h2>Contacte con nosotros</h2>
         <p>Si tiene alguna duda o desea explorar cómo podemos ayudarle, no dude en contactarnos.</p>
         
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xnnbewlo" method="POST">
+
           <div class="form-row">
             <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
             <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
@@ -419,7 +418,8 @@
     function blogCarouselControl(direction) {
         blogCarouselPaused = true;
         const carousel = document.querySelector('.blog-carousel');
-        const cardWidth = 380; // 350px + 30px gap
+        const isMobile = window.innerWidth <= 768;
+        const cardWidth = isMobile ? 295 : 380; // 280px + 15px gap en móvil, 350px + 30px en desktop
         
         if (direction === 'next') {
             carousel.style.transform = `translateX(-${cardWidth}px)`;
@@ -523,60 +523,56 @@
             if (section) observer.observe(section);
         });
         
-        // Pausar carousel cuando se hace hover
-        const blogCarousel = document.querySelector('.blog-carousel-container');
-        if (blogCarousel) {
-            blogCarousel.addEventListener('mouseenter', () => {
-                blogCarouselPaused = true;
-            });
-            
-            blogCarousel.addEventListener('mouseleave', () => {
-                blogCarouselPaused = false;
-            });
-        }
+        // El hover del carousel del blog se maneja con CSS
 
         // Newsletter form
         const newsletterForm = document.getElementById('newsletterForm');
         if (newsletterForm) {
-            newsletterForm.addEventListener('submit', (e) => {
+            newsletterForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const email = document.getElementById('email').value;
+                const submitBtn = newsletterForm.querySelector('button[type="submit"]');
                 
                 if (email) {
-                    alert('¡Gracias por suscribirte! Recibirás nuestros tips de FinOps y Security pronto.');
-                    newsletterForm.reset();
+                    // Cambiar botón a estado de carga
+                    submitBtn.textContent = 'Suscribiendo...';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        // Enviar a Mailchimp
+                        const formData = new FormData(newsletterForm);
+                        await fetch(newsletterForm.action, {
+                            method: 'POST',
+                            body: formData,
+                            mode: 'no-cors'
+                        });
+                        
+                        // Mostrar mensaje de éxito
+                        alert('🎉 ¡Gracias por suscribirte!\n\nRecibirás tips exclusivos sobre FinOps y Security AWS directamente en tu inbox.');
+                        newsletterForm.reset();
+                        
+                    } catch (error) {
+                        // Incluso con errores de CORS, la suscripción puede haberse procesado
+                        alert('🎉 ¡Gracias por suscribirte!\n\nRecibirás tips exclusivos sobre FinOps y Security AWS directamente en tu inbox.');
+                        newsletterForm.reset();
+                    } finally {
+                        // Restaurar botón
+                        submitBtn.textContent = 'Suscribirse';
+                        submitBtn.disabled = false;
+                    }
                 }
             });
         }
         
-        // Contact form
+        // Contact form - FormSubmit maneja el envío directamente
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                submitBtn.textContent = 'Enviando...';
+                submitBtn.disabled = true;
                 
-                const formData = new FormData(contactForm);
-                const data = {
-                    nombre: formData.get('nombre'),
-                    apellidos: formData.get('apellidos'),
-                    telefono: formData.get('telefono'),
-                    email: formData.get('email'),
-                    mensaje: formData.get('mensaje')
-                };
-                
-                // Crear mailto link
-                const subject = encodeURIComponent('Consulta desde la web - ' + data.nombre + ' ' + data.apellidos);
-                const body = encodeURIComponent(
-                    'Nombre: ' + data.nombre + ' ' + data.apellidos + '\n' +
-                    'Teléfono: ' + data.telefono + '\n' +
-                    'Email: ' + data.email + '\n\n' +
-                    'Mensaje:\n' + data.mensaje
-                );
-                
-                window.location.href = 'mailto:contact@nubirasolutions.com?subject=' + subject + '&body=' + body;
-                
-                alert('¡Gracias por contactarnos! Se abrirá tu cliente de email para enviar el mensaje.');
-                contactForm.reset();
+                // FormSubmit procesará el formulario y redirigirá automáticamente
             });
         }
     });
