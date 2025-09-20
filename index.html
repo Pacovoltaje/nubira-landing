@@ -13,20 +13,25 @@
 <body>
 
   <div class="hero-navigation">
-    <div class="logo">
-      <img src="fotos/Logoblanco.png" alt="Logo Nubira Solutions">
-      <span class="logo-text">Nubira Solutions</span>
-    </div>
-    <div class="nav-and-social">
+    <div class="hero-navigation-container">
+      <div class="logo">
+        <img src="images/Logoblanco.png" alt="Logo Nubira Solutions">
+        <span class="logo-text">Nubira Solutions</span>
+      </div>
       <nav class="nav-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#sobre-nosotros">Sobre Nosotros</a>
-        <a href="mailto:contacto@nubirasolutions.com">Contacto</a>
+        <a href="#services">Servicios</a>
+        <a href="#about">Sobre Nosotros</a>
+        <a href="#contact">Contacto</a>
       </nav>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/monicaescobarcuesta/" target="_blank" aria-label="Perfil de LinkedIn de Nubira Solutions">
-          <img src="fotos/icons8-linkedin-100.png" alt="LinkedIn">
+          <img src="images/icons8-linkedin-100.png" alt="LinkedIn">
         </a>
+      </div>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </div>
@@ -34,187 +39,563 @@
   <section class="hero">
     <div class="hero-overlay">
       <div class="hero-content">
-        <h1>Consultoría Cloud Especializada en AWS</h1>
-        <h2>Optimiza tu infraestructura con IA, Código y Seguridad</h2>
-        <p>Automatiza, ahorra y escala sin sobresaltos. Descubre cómo optimizar tu entorno cloud desde hoy.</p>
+        <div class="aws-logo-hero">
+          <img src="images/Amazon_Web_Services_Logo.svg.png" alt="AWS Partner" class="aws-logo">
+        </div>
+        <h1>Expertos en AWS</h1>
+        <h2>¿Tu factura de la nube se dispara?</h2>
+        <p>Te ayudamos a gastar menos y dormir tranquilo, sin poner en riesgo tu infraestructura con nuestros especialistas en FinOps y Seguridad.</p>
         <div class="cta-buttons">
-          <a href="#servicios" class="btn-primary">Ver Servicios</a>
-          <a href="https://calendly.com/contacto-nubirasolutions" target="_blank" class="btn-secondary">Agendar Reunión</a>
+          <a href="#services" class="btn-primary">Ver Servicios</a>
+          <a href="https://calendly.com/contact-nubirasolutions/30min" target="_blank" class="btn-secondary">Reserva una Consulta Online Gratuita</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="benefits-section">
-    <h2>¿Por qué tu Empresa Necesita la Nube?</h2>
-    <div class="benefits-grid">
-      <div class="beneficio-cloud">
-        <div class="icono"><i class="fas fa-piggy-bank"></i></div>
-        <h3>¡Adiós a los Gastos Fijos! La Nube Reduce Costos y Optimiza tu Inversión.</h3>
-        <p>¿Servidores costosos y mantenimiento sin fin? La nube te libera. Paga solo por lo que usas y enfoca tu capital donde realmente importa: ¡el crecimiento de tu negocio!</p>
-        <p class="palabras-clave">Ahorro, Eficiencia, Pago por uso, Inversión inteligente.</p>
+    <h2>¿Por qué necesitas optimizar tu AWS?</h2>
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+        <div class="carousel-slide active">
+          <div class="beneficio-cloud">
+            <div class="icono"><i class="fas fa-chart-line"></i></div>
+            <h3>FinOps: Optimización de Costos AWS</h3>
+            <p>Reduce hasta un 40% tu factura de AWS identificando recursos infrautilizados, rightsizing de instancias y optimización de Reserved Instances.</p>
+            <p class="palabras-clave">Cost Optimization, FinOps, AWS Billing, Resource Management</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="beneficio-cloud">
+            <div class="icono"><i class="fas fa-shield-alt"></i></div>
+            <h3>Security: Protección y Compliance</h3>
+            <p>Fortalece tu postura de seguridad con assessments completos, implementación de controles y cumplimiento de frameworks como SOC2, ISO27001.</p>
+            <p class="palabras-clave">Security Assessment, Compliance, AWS Security, Risk Management</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="beneficio-cloud">
+            <div class="icono"><i class="fas fa-expand-arrows-alt"></i></div>
+            <h3>Escalabilidad: Crecimiento Controlado</h3>
+            <p>Diseña arquitecturas que escalen automáticamente según demanda, manteniendo costos optimizados y alta disponibilidad.</p>
+            <p class="palabras-clave">Auto Scaling, High Availability, Performance, Architecture</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="beneficio-cloud">
+            <div class="icono"><i class="fas fa-cogs"></i></div>
+            <h3>Automatización: Eficiencia Operacional</h3>
+            <p>Implementa Infrastructure as Code, CI/CD pipelines y monitoreo automatizado para reducir errores y acelerar deployments.</p>
+            <p class="palabras-clave">IaC, Terraform, CloudFormation, DevOps, Automation</p>
+          </div>
+        </div>
       </div>
-      <div class="beneficio-cloud">
-        <div class="icono"><i class="fas fa-rocket"></i></div>
-        <h3>Crece sin Frenos: Adapta tu Empresa a la Velocidad del Mercado con la Nube.</h3>
-        <p>¿Picos de demanda inesperados? No hay problema. Escala tus recursos al instante y mantén la agilidad de tu negocio en cualquier situación. ¡Tu infraestructura evoluciona contigo!</p>
-        <p class="palabras-clave">Escalabilidad, Flexibilidad, Agilidad, Crecimiento rápido.</p>
-      </div>
-      <div class="beneficio-cloud">
-        <div class="icono"><i class="fas fa-shield-alt"></i></div>
-        <h3>Tu Información, Intocable: La Nube te Ofrece Seguridad Líder y Recuperación Total.</h3>
-        <p>Protege lo más valioso de tu empresa con la infraestructura segura y redundante de la nube. ¡Tus datos estarán a salvo de cualquier amenaza, garantizando la continuidad de tu negocio!</p>
-        <p class="palabras-clave">Seguridad, Protección de datos, Resiliencia, Recuperación, Confianza.</p>
-      </div>
-      <div class="beneficio-cloud">
-        <div class="icono"><i class="fas fa-users"></i></div>
-        <h3>Trabajo en Equipo sin Límites: Accede y Colabora desde Cualquier Lugar con la Nube.</h3>
-        <p>Impulsa la productividad de tus equipos permitiéndoles trabajar juntos en tiempo real, sin importar su ubicación. ¡La nube conecta a tu empresa y facilita la colaboración global!</p>
-        <p class="palabras-clave">Acceso remoto, Colaboración, Productividad, Conectividad, Movilidad.</p>
-      </div>
-      <div class="beneficio-cloud">
-        <div class="icono"><i class="fas fa-cogs"></i></div>
-        <h3>Innovación Constante: Accede a las Últimas Tecnologías y Herramientas con la Nube.</h3>
-        <p>Mantente a la vanguardia sin grandes inversiones iniciales. La nube te da acceso instantáneo a servicios de IA, Machine Learning, bases de datos avanzadas y mucho más. ¡Innovar nunca fue tan fácil!</p>
-        <p class="palabras-clave">Innovación, Tecnología, IA, Machine Learning, Herramientas.</p>
-      </div>
-      <div class="beneficio-cloud">
-        <div class="icono"><i class="fas fa-globe"></i></div>
-        <h3>Alcance Global: Expande tu Negocio a Nivel Mundial con la Infraestructura Cloud.</h3>
-        <p>Llega a tus clientes dondequiera que estén. Despliega tus aplicaciones y servicios en múltiples regiones geográficas con facilidad, ofreciendo baja latencia y una experiencia de usuario excepcional a nivel global.</p>
-        <p class="palabras-clave">Alcance Global, Expansión, Baja Latencia, Experiencia de Usuario.</p>
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+        <div class="carousel-dots">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
       </div>
     </div>
   </section>
 
-  <section class="services-section" id="servicios">
-    <h2>Nuestros Servicios</h2>
+  <section class="services-section" id="services">
+    <h2>Nuestros Servicios Especializados</h2>
     <div class="services">
       <div class="card">
-        <h3>Optimización de Costos en la Nube</h3>
-        <p>Analizamos y ajustamos tu infraestructura AWS para eliminar gastos innecesarios, maximizando tu inversión y alineándola con el beneficio de Ahorro y Eficiencia.</p>
-        <p class="price">Desde: 990 €</p>
-        <a href="https://calendly.com/contacto-nubirasolutions" target="_blank" class="btn-secondary btn-small">Solicitar Auditoría</a>
+        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>FinOps Assessment & Implementation</h3>
+        <p>Análisis completo de costos AWS, identificación de oportunidades de ahorro e implementación de prácticas FinOps.</p>
+        <ul class="service-features">
+          <li>Cost & Usage Report Analysis</li>
+          <li>Resource Rightsizing</li>
+          <li>Reserved Instances Optimization</li>
+          <li>Tagging Strategy</li>
+        </ul>
+        <p class="price">Oferta limitada: primera auditoría gratuita si detectamos ahorros en tu infraestructura de al menos el 10% de tu factura</p>
+        <a href="https://calendly.com/contact-nubirasolutions/30min" target="_blank" class="btn-secondary btn-small">Solicitar Assessment Gratuito</a>
       </div>
       <div class="card">
-        <h3>Arquitecturas Escalables y Resilientes</h3>
-        <p>Diseñamos e implementamos soluciones en la nube que crecen contigo, garantizando Escalabilidad, Alta Disponibilidad y Alcance Global para que tu negocio nunca se frene.</p>
-        <p class="price">Desde: 2.500 €</p>
-        <a href="https://calendly.com/contacto-nubirasolutions" target="_blank" class="btn-secondary btn-small">Hablar con un Experto</a>
+        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Security Assessment & Implementation</h3>
+        <p>Evaluación de seguridad AWS, implementación de controles y preparación para auditorías de compliance.</p>
+        <ul class="service-features">
+          <li>AWS Security Hub Assessment</li>
+          <li>IAM Policies Review</li>
+          <li>Compliance Framework Setup</li>
+          <li>Incident Response Plan</li>
+        </ul>
+        <p class="price">Oferta limitada: primera auditoría gratuita si detectamos ahorros en tu infraestructura de al menos el 10% de tu factura</p>
+        <a href="https://calendly.com/contact-nubirasolutions/30min" target="_blank" class="btn-secondary btn-small">Solicitar Assessment Gratuito</a>
       </div>
-      <div class="card">
-        <h3>Infraestructura como Código (IaC) y Automatización</h3>
-        <p>Transformamos la gestión de tu infraestructura con IaC (Terraform, CloudFormation) para lograr Agilidad, Seguridad Robusta e Innovación Constante, permitiéndote desplegar y gestionar recursos de forma eficiente y segura.</p>
-        <p class="price">Presupuesto a medida</p>
-        <a href="https://calendly.com/contacto-nubirasolutions" target="_blank" class="btn-secondary btn-small">Planificar mi Migración</a>
-      </div>
-      <div class="card">
-        <h3>Servicios de Migración a la Nube</h3>
-        <p>Te acompañamos en todo el proceso de traslado de tus aplicaciones y datos a AWS, asegurando una transición fluida, segura y con mínimo impacto en tu operación. Conecta con los beneficios de Escalabilidad y Agilidad desde el primer día.</p>
-        <p class="price">Desde: 3.500 €</p>
-        <a href="https://calendly.com/contacto-nubirasolutions" target="_blank" class="btn-secondary btn-small">Solicitar Presupuesto</a>
+      <div class="card featured">
+        <div class="service-icon"><i class="fas fa-star"></i></div>
+        <h3>Combo FinOps + Security</h3>
+        <p>Solución integral que combina optimización de costos y fortalecimiento de seguridad en un solo proyecto.</p>
+        <ul class="service-features">
+          <li>Assessment completo 360°</li>
+          <li>Roadmap integrado</li>
+          <li>Implementación coordinada</li>
+          <li>Soporte post-implementación</li>
+        </ul>
+        <p class="price combo-offer">Oferta limitada: primera auditoría gratuita si detectamos ahorros en tu infraestructura de al menos el 10% de tu factura</p>
+        <a href="https://calendly.com/contact-nubirasolutions/30min" target="_blank" class="btn-primary btn-small">Solicitar Combo</a>
       </div>
     </div>
   </section>
 
-  <section class="about-me-section" id="sobre-nosotros">
-    <div class="about-me-image">
-      <img src="fotos/monica_profile.jpeg" alt="Mónica Escobar">
+  <section class="about-us-section" id="about">
+    <div class="aws-partnership">
+      <img src="images/Amazon_Web_Services_Logo.svg.png" alt="AWS" class="aws-logo-about">
+      <h2>Nuestro Equipo</h2>
     </div>
-    <div class="about-me-text">
-      <h2>Sobre mí: Mi historia con la nube</h2>
-      <h3>Hola, soy Mónica Escobar, ingeniera informática y fundadora de Nubira Solutions.</h3>
-      <p>Mi trayectoria profesional ha sido tan diversa como enriquecedora. Empecé en el exigente sector bancario, donde la fiabilidad y la seguridad lo eran todo. Allí aprendí a trabajar con infraestructuras críticas, donde cada detalle contaba.</p>
-      <p>Más tarde, pasé al sector turístico, un entorno cambiante donde la escalabilidad era clave. Fue allí donde descubrí el verdadero poder de la tecnología cloud para adaptarse a picos de demanda y necesidades variables. Esta experiencia me dio una nueva visión sobre cómo la nube puede ser un aliado estratégico para los negocios.</p>
-      <p>Pero fue en el mundo de las startups donde realmente conecté con mi propósito. Vi de primera mano los desafíos que enfrentan: presupuestos ajustados, necesidad de escalar rápidamente y mucha presión por construir una base tecnológica sólida desde el principio. Decidí entonces poner toda mi experiencia al servicio de estas empresas.</p>
-      <p>Así nació Nubira Solutions, porque creo firmemente que la nube —bien gestionada— no es un gasto, sino una palanca de crecimiento. Hoy ayudo a startups y scale-ups a aprovechar todo el potencial de AWS de forma eficiente, escalable y sin sustos en la factura.</p>
+    
+    <div class="team-container">
+      <div class="team-member">
+        <div class="member-image">
+          <img src="images/monica_profile.jpeg" alt="Mónica Escobar">
+        </div>
+        <div class="member-info">
+          <h3>Mónica Escobar</h3>
+          <h4>Especialista FinOps AWS</h4>
+          <p>Ingeniera informática con amplia experiencia en optimización de costos cloud. Especializada en FinOps, ha ayudado a empresas a reducir sus facturas de AWS hasta un 40% mediante estrategias de rightsizing, Reserved Instances y governance de costos.</p>
+          <p>Su experiencia en sectores bancario, turístico y startups le proporciona una visión única sobre cómo adaptar las estrategias FinOps a diferentes modelos de negocio y escalas.</p>
+          <div class="certifications-mini">
+            <span class="cert-badge">AWS Solutions Architect Professional</span>
+            <span class="cert-badge">AWS SysOps Administrator</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="images/Diseño sin título (4).png" alt="Francisco Gómez Muñoz">
+        </div>
+        <div class="member-info">
+          <h3>Francisco Gómez</h3>
+          <h4>Especialista Ciberseguridad AWS</h4>
+          <p>Experto en ciberseguridad con amplia experiencia en protección de infraestructuras cloud y redes. Especializado en security assessments, compliance e implementación de controles de seguridad en AWS.</p>
+          <p>Ha liderado proyectos de compliance para SOC2, ISO27001 y PCI-DSS, ayudando a empresas a fortalecer su postura de seguridad y prepararse para auditorías exitosas.</p>
+          <div class="certifications-mini">
+            <span class="cert-badge">AWS Security Specialty</span>
+            <span class="cert-badge">CISSP</span>
+            <span class="cert-badge">Cisco Certified</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="certifications">
-    <h2>Certificaciones Oficiales</h2>
+    <h2>Certificaciones Oficiales del Equipo</h2>
     <div class="cert-logos">
-      <img src="fotos/aws-certified-solutions-architect-professional.png" alt="AWS Certified Solutions Architect – Professional" />
-      <img src="fotos/aws-certified-solutions-architect-associate-2.png" alt="AWS Certified Solutions Architect – Associate" />
-      <img src="fotos/aws-certified-sysops-administrator-associate.png" alt="AWS Certified SysOps Administrator – Associate" />
-      <img src="fotos/cka-certified-kubernetes-administrator (1).png" alt="CKA – Certified Kubernetes Administrator" />
-      <img src="fotos/certified-safe-5-practitioner (2).png" alt="SAFe 5 Practitioner" />
-      <img src="fotos/rhcsa-rhel-9-course.png" alt="RHCSA RHEL 9" />
+      <div class="cert-item">
+        <img src="images/aws-certified-solutions-architect-professional.png" alt="AWS Solutions Architect Professional" />
+        <span class="cert-name">AWS Solutions Architect Professional</span>
+      </div>
+      <div class="cert-item">
+        <img src="images/aws-certified-solutions-architect-associate-2.png" alt="AWS Solutions Architect Associate" />
+        <span class="cert-name">AWS Solutions Architect Associate</span>
+      </div>
+      <div class="cert-item">
+        <img src="images/aws-certified-sysops-administrator-associate.png" alt="AWS SysOps Administrator" />
+        <span class="cert-name">AWS SysOps Administrator</span>
+      </div>
+      <div class="cert-item">
+        <img src="images/hashicorp-certified-terraform-associate-003.png" alt="Terraform Associate" />
+        <span class="cert-name">HashiCorp Terraform Associate</span>
+      </div>
+      <div class="cert-item">
+        <img src="images/cka-certified-kubernetes-administrator (1).png" alt="Kubernetes Administrator" />
+        <span class="cert-name">Certified Kubernetes Administrator</span>
+      </div>
+      <div class="cert-item">
+        <img src="images/certified-safe-5-practitioner (2).png" alt="SAFe Practitioner" />
+        <span class="cert-name">SAFe 5 Practitioner</span>
+      </div>
+      <div class="cert-item">
+        <img src="images/rhcsa-rhel-9-course.png" alt="RHCSA" />
+        <span class="cert-name">Red Hat Certified System Administrator</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blog-section">
+    <h2>Casos de Éxito</h2>
+    <p class="blog-subtitle">Descubre cómo hemos ayudado a otras empresas a optimizar sus costos y seguridad en AWS</p>
+    
+    <div class="blog-carousel-container">
+      <button class="blog-nav-btn blog-prev" onclick="blogCarouselControl('prev')">❮</button>
+      <div class="blog-carousel">
+        <article class="blog-card">
+          <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center')">
+            <div class="blog-placeholder">📊</div>
+          </div>
+          <div class="blog-content">
+            <span class="blog-category">FinOps Case Study</span>
+            <h3>Cómo reducimos 45% los costos AWS de una startup fintech</h3>
+            <p>Implementación de estrategias FinOps que resultaron en ahorros significativos mediante rightsizing y Reserved Instances.</p>
+            <a href="blog.html#case-study-1" target="_blank" class="blog-link">Leer más →</a>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop&crop=center')">
+            <div class="blog-placeholder">🔒</div>
+          </div>
+          <div class="blog-content">
+            <span class="blog-category">Security Assessment</span>
+            <h3>Preparación exitosa para auditoría SOC2 en 90 días</h3>
+            <p>Proceso completo de implementación de controles de seguridad y preparación para certificación SOC2 Type II.</p>
+            <a href="blog.html#case-study-2" target="_blank" class="blog-link">Leer más →</a>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop&crop=center')">
+            <div class="blog-placeholder">⚙️</div>
+          </div>
+          <div class="blog-content">
+            <span class="blog-category">FinOps + Security</span>
+            <h3>Optimización integral: costos y seguridad en una sola estrategia</h3>
+            <p>Cómo combinar prácticas FinOps con fortalecimiento de seguridad para maximizar ROI y compliance.</p>
+            <a href="blog.html#case-study-3" target="_blank" class="blog-link">Leer más →</a>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center')">
+            <div class="blog-placeholder">🏷️</div>
+          </div>
+          <div class="blog-content">
+            <span class="blog-category">FinOps Automation</span>
+            <h3>FinOps automatizado: reducción de costes con tagging inteligente</h3>
+            <p>Implementación de tagging automático que resultó en 38% de ahorro mediante detección de recursos inactivos.</p>
+            <a href="blog.html#case-study-4" target="_blank" class="blog-link">Leer más →</a>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop&crop=center')">
+            <div class="blog-placeholder">🔍</div>
+          </div>
+          <div class="blog-content">
+            <span class="blog-category">Security Audit</span>
+            <h3>Seguridad AWS bajo control: auditoría integral sin fricciones</h3>
+            <p>Auditoría técnica exhaustiva que redujo 90% las alertas de riesgo y reforzó el cumplimiento en 6 semanas.</p>
+            <a href="blog.html#case-study-5" target="_blank" class="blog-link">Leer más →</a>
+          </div>
+        </article>
+        
+        <!-- Duplicado para efecto circular -->
+        <article class="blog-card">
+          <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center')">
+            <div class="blog-placeholder">📊</div>
+          </div>
+          <div class="blog-content">
+            <span class="blog-category">FinOps Case Study</span>
+            <h3>Cómo reducimos 45% los costos AWS de una startup fintech</h3>
+            <p>Implementación de estrategias FinOps que resultaron en ahorros significativos mediante rightsizing y Reserved Instances.</p>
+            <a href="blog.html#case-study-1" target="_blank" class="blog-link">Leer más →</a>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop&crop=center')">
+            <div class="blog-placeholder">🔒</div>
+          </div>
+          <div class="blog-content">
+            <span class="blog-category">Security Assessment</span>
+            <h3>Preparación exitosa para auditoría SOC2 en 90 días</h3>
+            <p>Proceso completo de implementación de controles de seguridad y preparación para certificación SOC2 Type II.</p>
+            <a href="blog.html#case-study-2" target="_blank" class="blog-link">Leer más →</a>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop&crop=center')">
+            <div class="blog-placeholder">⚙️</div>
+          </div>
+          <div class="blog-content">
+            <span class="blog-category">FinOps + Security</span>
+            <h3>Optimización integral: costos y seguridad en una sola estrategia</h3>
+            <p>Cómo combinar prácticas FinOps con fortalecimiento de seguridad para maximizar ROI y compliance.</p>
+            <a href="blog.html#case-study-3" target="_blank" class="blog-link">Leer más →</a>
+          </div>
+        </article>
+      </div>
+      <button class="blog-nav-btn blog-next" onclick="blogCarouselControl('next')">❯</button>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h2>📧 Mantente al día con las mejores prácticas</h2>
+        <p>Recibe tips exclusivos sobre FinOps, Security y optimización AWS directamente en tu inbox</p>
+        
+        <form class="newsletter-form" id="newsletterForm">
+          <div class="form-group">
+            <input type="email" id="email" placeholder="tu@email.com" required>
+            <button type="submit" class="btn-primary">Suscribirse</button>
+          </div>
+          <p class="newsletter-privacy">No spam. Puedes darte de baja en cualquier momento.</p>
+        </form>
+        
+        <div class="newsletter-benefits">
+          <div class="benefit-item">
+            <span class="benefit-icon">✨</span>
+            <span>Tips semanales de optimización</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">📈</span>
+            <span>Case studies exclusivos</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">🔒</span>
+            <span>Alertas de seguridad AWS</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
-    <div class="footer-top">
+    <div class="footer-top" id="contact">
       <section class="footer-contact-rediseñada">
         <h2>Contacte con nosotros</h2>
         <p>Si tiene alguna duda o desea explorar cómo podemos ayudarle, no dude en contactarnos.</p>
-        <a href="mailto:contacto@nubirasolutions.com" class="cta-button small" target="_blank">Contactar por Email</a>
+        
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+          </div>
+          <div class="form-row">
+            <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+          <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" rows="4" required></textarea>
+          <div class="footer-buttons">
+            <button type="submit" class="cta-button small">Enviar</button>
+            <a href="https://calendly.com/contact-nubirasolutions/30min" class="cta-button small secondary" target="_blank">Reserva una Consulta Gratuita</a>
+          </div>
+        </form>
       </section>
       </div>
 
     <div class="footer-centered-info">
        <p>&copy; 2025 Nubira Solutions. Todos los derechos reservados.</p>
        <p>Diseñado por Nubira Solutions</p>
-       <p><a href="https://calendly.com/contacto-nubirasolutions" target="_blank">Agenda tu cita aquí</a></p>
     </div>
 
     <div class="footer-social-bottom">
         <a href="https://www.linkedin.com/in/monicaescobarcuesta/" target="_blank" aria-label="Perfil de LinkedIn de Nubira Solutions">
-          <img src="fotos/icons8-linkedin-100.png" alt="LinkedIn">
+          <img src="images/icons8-linkedin-100.png" alt="LinkedIn">
         </a>
         </div>
 
 
-    <div class="footer-trust-rediseñada">
-       <p>Más de 10 empresas ya confían en nosotros.</p>
-    </div>
+
 
   </footer>
 
   <script>
-    // Espera a que el DOM esté completamente cargado
+    // Variables globales para el carousel
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    // Variables para el blog carousel
+    let blogCarouselPaused = false;
+    
+    // Función para controlar el blog carousel
+    function blogCarouselControl(direction) {
+        blogCarouselPaused = true;
+        const carousel = document.querySelector('.blog-carousel');
+        const cardWidth = 380; // 350px + 30px gap
+        
+        if (direction === 'next') {
+            carousel.style.transform = `translateX(-${cardWidth}px)`;
+            setTimeout(() => {
+                carousel.appendChild(carousel.firstElementChild);
+                carousel.style.transform = 'translateX(0)';
+            }, 300);
+        } else {
+            carousel.style.transform = 'translateX(0)';
+            carousel.insertBefore(carousel.lastElementChild, carousel.firstElementChild);
+            carousel.style.transform = `translateX(-${cardWidth}px)`;
+            setTimeout(() => {
+                carousel.style.transform = 'translateX(0)';
+            }, 10);
+        }
+        
+        // Reanudar auto-scroll después de 3 segundos
+        setTimeout(() => {
+            blogCarouselPaused = false;
+        }, 3000);
+    }
+
+    // Funciones del carousel
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+
+    function changeSlide(direction) {
+        currentSlideIndex += direction;
+        if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
+        if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
+        showSlide(currentSlideIndex);
+    }
+
+    function currentSlide(index) {
+        currentSlideIndex = index - 1;
+        showSlide(currentSlideIndex);
+    }
+
+    // Auto-play carousel
+    setInterval(() => {
+        changeSlide(1);
+    }, 5000);
+
     document.addEventListener('DOMContentLoaded', (event) => {
+        // Cookie Consent
+        const cookieConsent = document.getElementById('cookieConsent');
+        const acceptBtn = document.getElementById('acceptCookies');
+        const rejectBtn = document.getElementById('rejectCookies');
 
-        // Selecciona las secciones a las que quieres aplicar la transición
-        const sectionsToObserve = document.querySelectorAll('.benefits-section, .services-section');
+        if (!localStorage.getItem('cookieConsent')) {
+            cookieConsent.style.display = 'flex';
+        }
 
-        // Opciones para el Intersection Observer
-        // root: null significa que se observa con respecto al viewport
-        // threshold: 0.1 significa que el callback se ejecutará cuando al menos el 10% de la sección sea visible
-        const observerOptions = {
-            root: null,
-            threshold: 0.1,
-        };
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.style.display = 'none';
+        });
 
-        // Crea un nuevo Intersection Observer
-        const observer = new IntersectionObserver((entries, observer) => {
+        rejectBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'rejected');
+            cookieConsent.style.display = 'none';
+        });
+
+        // Menú hamburguesa
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            const navLinkItems = document.querySelectorAll('.nav-links a');
+            navLinkItems.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+
+        // Intersection Observer
+        const sectionsToObserve = document.querySelectorAll('.benefits-section, .services-section, .about-us-section');
+        const observerOptions = { root: null, threshold: 0.1 };
+
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                // Si la sección es visible en el viewport
                 if (entry.isIntersecting) {
-                    // Añade la clase 'is-visible' para activar la transición CSS
                     entry.target.classList.add('is-visible');
-                    // Deja de observar la sección una vez que se ha vuelto visible (opcional, si solo quieres que la animación ocurra una una vez)
-                    // observer.unobserve(entry.target);
                 } else {
-                    // Opcional: Si quieres que la animación se repita al salir y volver a entrar en la vista
-                     entry.target.classList.remove('is-visible');
+                    entry.target.classList.remove('is-visible');
                 }
             });
         }, observerOptions);
 
-        // Empieza a observar cada una de las secciones seleccionadas
         sectionsToObserve.forEach(section => {
-            if (section) {
-                observer.observe(section);
-            }
+            if (section) observer.observe(section);
         });
+        
+        // Pausar carousel cuando se hace hover
+        const blogCarousel = document.querySelector('.blog-carousel-container');
+        if (blogCarousel) {
+            blogCarousel.addEventListener('mouseenter', () => {
+                blogCarouselPaused = true;
+            });
+            
+            blogCarousel.addEventListener('mouseleave', () => {
+                blogCarouselPaused = false;
+            });
+        }
 
+        // Newsletter form
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                
+                if (email) {
+                    alert('¡Gracias por suscribirte! Recibirás nuestros tips de FinOps y Security pronto.');
+                    newsletterForm.reset();
+                }
+            });
+        }
+        
+        // Contact form
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                const data = {
+                    nombre: formData.get('nombre'),
+                    apellidos: formData.get('apellidos'),
+                    telefono: formData.get('telefono'),
+                    email: formData.get('email'),
+                    mensaje: formData.get('mensaje')
+                };
+                
+                // Crear mailto link
+                const subject = encodeURIComponent('Consulta desde la web - ' + data.nombre + ' ' + data.apellidos);
+                const body = encodeURIComponent(
+                    'Nombre: ' + data.nombre + ' ' + data.apellidos + '\n' +
+                    'Teléfono: ' + data.telefono + '\n' +
+                    'Email: ' + data.email + '\n\n' +
+                    'Mensaje:\n' + data.mensaje
+                );
+                
+                window.location.href = 'mailto:contact@nubirasolutions.com?subject=' + subject + '&body=' + body;
+                
+                alert('¡Gracias por contactarnos! Se abrirá tu cliente de email para enviar el mensaje.');
+                contactForm.reset();
+            });
+        }
     });
   </script>
 
+  <!-- Cookie Consent Pop-up -->
+  <div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-content">
+      <h3>🍪 Uso de Cookies</h3>
+      <p>Utilizamos cookies para mejorar tu experiencia de navegación y analizar el tráfico del sitio web.</p>
+      <div class="cookie-buttons">
+        <button id="acceptCookies" class="btn-primary btn-small">Aceptar</button>
+        <button id="rejectCookies" class="btn-secondary btn-small">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
-
 
 
 

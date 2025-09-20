@@ -1,8 +1,5 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-/* Asegúrate de que estas fuentes estén importadas si las vas a usar */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap');
-/* Si usas Inter, descomenta la línea de abajo y comenta las de arriba si no las necesitas */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 
 /* Reset básico */
@@ -12,13 +9,38 @@
   box-sizing: border-box;
 }
 
+/* Transiciones globales */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animaciones globales */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 /* Tipografía y fondo general */
 body {
-  /* Usando Open Sans/Poppins según tu HTML importado. Ajusta si usas Inter u otra. */
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: white;
   /* --- FONDO DE IMAGEN GLOBAL: Aplicado solo al body --- */
-  background-image: url('fotos/dominik-schroder-FIKD9t5_zQ-unsplash.jpg');
+  background-image: url('images/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg');
   background-repeat: no-repeat;
   background-position: center center; /* Puedes ajustar la posición si usas 'cover' */
   background-attachment: fixed;
@@ -27,8 +49,6 @@ body {
   /* --- FIN PROPIEDADES DE FONDO GLOBAL --- */
   position: relative;
   min-height: 100vh;
-  /* Asegura que no haya scroll horizontal no deseado */
-  overflow-x: hidden;
 }
 
 /* Overlay oscuro global del body (para oscurecer la imagen de fondo global) */
@@ -52,69 +72,66 @@ main, nav, header, section {
 
 /* --- NAVBAR (Now hero-navigation) --- */
 .hero-navigation {
-  /* --- FONDO TRANSLÚCIDO: Ajusta el último valor (opacidad) si quieres que sea más o menos transparente --- */
-  background: rgba(0, 0, 0, 0.7); /* 0.7 es 70% opacidad. Reduce para más transparencia. */
+  background: rgba(0, 0, 0, 0.7);
   color: #fff;
-  /* --- REDUCCIÓN ALTURA: Padding vertical reducido --- */
-  padding: 0.1rem 1rem; /* Puedes ajustar este valor (el primero) */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed; /* Se mantiene fija en la parte superior en desktop */
+  padding: 0.8rem 0; /* Padding vertical aumentado */
+  position: fixed; /* Se mantiene fija en la parte superior */
   top: 0;
   left: 0;
   right: 0;
+  width: 100%; /* Ocupa todo el ancho del navegador */
   z-index: 101; /* Z-index alto para que esté por encima de todo */
-  /* --- ELIMINADO max-width para que ocupe todo el ancho en desktop --- */
-  /* max-width: 1200px; */ /* Eliminado */
-  /* --- CENTRADO DEL CONTENIDO INTERNO --- */
-  /* El contenido interno (logo, enlaces, social) se centrará usando flexbox y margin auto en sus contenedores si es necesario */
-  margin: 0 auto; /* Esto ya no centrará la barra, sino su contenido si no ocupa todo el ancho */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  /* --- ESTILO ADICIONAL PARA DESKTOP: Sombra sutil --- */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor interno para limitar el ancho del contenido */
+.hero-navigation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .hero-navigation .logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  /* --- AJUSTE PARA DESKTOP: Controlar el crecimiento para dejar espacio a otros elementos --- */
-  flex-shrink: 0; /* Evita que el logo se encoja */
 }
 
 .hero-navigation .logo img {
   height: auto;
-  /* --- REDUCCIÓN ALTURA: Ancho máximo de la imagen del logo --- */
-  max-width: 90px; /* Puedes ajustar este valor */
-  /* --- AÑADIDO: Alineación vertical --- */
+  max-width: 80px;
   vertical-align: middle;
 }
 
 .hero-navigation .logo-text {
-  /* --- REDUCCIÓN ALTURA: Tamaño de fuente del texto del logo --- */
-  font-size: 1rem; /* Puedes ajustar este valor */
+  font-size: 1.1rem;
   font-weight: bold;
   color: #fff;
 }
 
-/* --- NUEVO CONTENEDOR PARA ENLACES Y SOCIAL --- */
-.hero-navigation .nav-and-social {
-    display: flex; /* Contenedor flex */
-    align-items: center; /* Alinear verticalmente al centro */
-    gap: 1.5rem; /* Espacio entre los enlaces de navegación y los iconos sociales */
-    /* Asegurar que este contenedor se alinee a la derecha */
-    margin-left: auto; /* Esto empuja el contenedor a la derecha */
-}
-
 .hero-navigation .nav-links {
   display: flex;
-  gap: 1.5rem;
-  /* Eliminado margin-right ya que el gap en .nav-and-social lo maneja */
-  /* margin-right: 1rem; */
-  /* Eliminado flex-grow y justify-content ya que .nav-and-social controla la distribución */
-  flex-grow: 0; /* Asegura que no crezca innecesariamente */
-  justify-content: flex-start; /* Alinea los enlaces al inicio del contenedor flex */
+  gap: 5rem;
+  margin-right: 1rem;
+}
+
+/* Menú hamburguesa para móviles */
+.hero-navigation .menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hero-navigation .menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
 }
 
 /* --- ESTILOS PARA LOS ENLACES SOCIALES --- */
@@ -122,8 +139,6 @@ main, nav, header, section {
   display: flex;
   align-items: center;
   gap: 0.5rem; /* Espacio entre iconos si añades más */
-  /* Eliminado flex-shrink ya que .nav-and-social controla la distribución */
-  /* flex-shrink: 0; */
 }
 
 .hero-navigation .social-links a img {
@@ -147,13 +162,60 @@ main, nav, header, section {
 
 .hero-navigation .nav-links a {
   text-decoration: none;
-  color: #fff;
+  color: #FF9900;
   font-weight: 500;
   transition: color 0.3s ease;
+  padding: 0.5rem 0;
 }
 
 .hero-navigation .nav-links a:hover {
-  color: #0ACF83;
+  color: #FFB84D;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .hero-navigation .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
+    transition: left 0.3s ease;
+    margin-right: 0;
+  }
+
+  .hero-navigation .nav-links.active {
+    left: 0;
+  }
+
+  .hero-navigation .nav-links a {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-navigation .menu-toggle {
+    display: flex;
+  }
+
+  .hero-navigation .logo-text {
+    display: none;
+  }
+
+  .hero-navigation .logo img {
+    max-width: 60px;
+  }
+
+  .hero-navigation .social-links a img {
+    height: 35px;
+  }
 }
 
 /* --- HERO SECTION: Nuevo fondo de imagen --- */
@@ -161,21 +223,48 @@ main, nav, header, section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  /* --- ESPACIO PARA NAV FIJA EN DESKTOP: Ajusta este padding-top --- */
-  /* Este valor debe ser igual o ligeramente mayor que la altura final de tu barra de navegación */
-  padding: 6rem 2rem 4rem; /* Ajusta el primer valor (padding-top) para desktop si hay solapamiento */
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
   text-align: center;
-  min-height: 60vh;
-  /* --- FONDO DE IMAGEN PARA ESTA SECCIÓN --- */
-  background-image: url('fotos/patrick-langwallner-8wV8bdQtmTo-unsplash.jpg'); /* Nueva imagen */
+  min-height: 80vh;
+  background-image: url('images/patrick-langwallner-8wV8bdQtmTo-unsplash.jpg');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover; /* Cubrirá la sección, recortando si es necesario */
-  background-color: #fff; /* Fondo de respaldo si la imagen no carga */
+  background-size: cover;
+  background-color: #fff;
   position: relative;
   z-index: 1;
-  /* No añadimos opacidad inicial ni transición aquí, ya que suele ser la primera sección visible */
+}
+
+/* Responsive para hero en móviles */
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1rem 3rem;
+    min-height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 
 /* --- ELIMINADO el overlay ::before de la sección hero --- */
@@ -201,12 +290,26 @@ main, nav, header, section {
 
 
 .hero-content {
-    position: relative; /* Asegura que el z-index funcione */
-    z-index: 2; /* Asegura que el contenido esté por encima del overlay */
-    /* Mantén otras propiedades como text-align, max-width, margin-inline, etc. */
+    position: relative;
+    z-index: 2;
     text-align: center;
     max-width: 700px;
     margin-inline: auto;
+}
+
+.aws-logo-hero {
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.aws-logo {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.aws-logo:hover {
+    transform: scale(1.1);
 }
 
 
@@ -220,31 +323,35 @@ main, nav, header, section {
   font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: #fff; /* Cambiado a blanco */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra de texto sutil */
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .hero h2 {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #eee; /* Gris muy claro */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra de texto sutil */
+  color: #eee;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out 0.6s both;
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: #ddd; /* Gris claro */
+  color: #ddd;
   max-width: 700px;
   margin-inline: auto;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra de texto sutil */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out 0.9s both;
 }
 
 .cta-buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  animation: fadeInUp 1s ease-out 1.2s both;
 }
 
 /* --- BOTONES --- */
@@ -262,28 +369,47 @@ main, nav, header, section {
 }
 
 .btn-primary {
-  background-color: #0ACF83;
-  color: #fff; /* Texto blanco para buen contraste */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  background-color: #FF9900;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-  background-color: #08b773; /* Color más oscuro al pasar el cursor */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra un poco más pronunciada */
-  color: #fff; /* Asegura que el texto siga siendo blanco */
+  background-color: #e6890a;
+  box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background-color: transparent;
-  border: 2px solid #0ACF83;
-  color: #0ACF83; /* Texto del color del borde */
-  box-shadow: none; /* Sin sombra por defecto */
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #FF9900;
+  color: #FF9900;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 153, 0, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-secondary:hover::before {
+  left: 100%;
 }
 
 .btn-secondary:hover {
-  background-color: #0ACF83; /* Fondo del color del borde al pasar el cursor */
-  color: #fff; /* Texto blanco al pasar el cursor para buen contraste */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil al pasar el cursor */
+  background-color: #FF9900;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(255, 153, 0, 0.3);
+  transform: translateY(-2px);
 }
 
 .btn-small {
@@ -291,19 +417,41 @@ main, nav, header, section {
   padding: 0.5rem 1rem;
 }
 
-/* --- BENEFICIOS SECTION: Fondo de color con transición --- */
+/* --- BENEFICIOS SECTION: Fondo blanco --- */
 .benefits-section {
-  padding: 40px 20px;
+  padding: 80px 20px;
   text-align: center;
-  /* --- FONDO DE COLOR PARA ESTA SECCIÓN --- */
-  background-color: #f9f9f9; /* Un gris muy claro */
-  /* Eliminado background-image, background-repeat, background-position, background-size */
-  color: #333; /* Color del texto */
+  background-color: #fff;
+  color: #333;
   position: relative;
   z-index: 1;
-  /* --- TRANSICIÓN: Opacidad inicial y transición --- */
-  opacity: 0; /* Inicialmente invisible */
-  transition: opacity 1s ease-out; /* Transición de 1 segundo */
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+/* Responsive para benefits section */
+@media (max-width: 768px) {
+  .benefits-section {
+    padding: 40px 15px;
+  }
+
+  .benefits-section h2 {
+    font-size: 2rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .beneficio-cloud {
+    padding: 20px;
+  }
+
+  .beneficio-cloud h3 {
+    font-size: 1.5rem;
+  }
 }
 
 /* Clase para cuando la sección es visible */
@@ -317,31 +465,120 @@ main, nav, header, section {
   margin-bottom: 30px;
 }
 
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
+/* Carousel Styles */
+.carousel-container {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  position: relative;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-slide {
+  display: none;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.carousel-btn {
+  background: #FF9900;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+}
+
+.carousel-btn:hover {
+  background: #e6890a;
+  transform: scale(1.1);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #FF9900;
+  transform: scale(1.2);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .beneficio-cloud {
-  background-color: #fff; /* Fondo blanco sólido para las tarjetas sobre color de fondo */
-  border: 1px solid #eee;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-  text-align: left;
-  /* --- FLEXBOX PARA ALINEAR BOTÓN ABAJO --- */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 50px 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 25px rgba(0, 0, 0, 0.06);
+  text-align: center;
   display: flex;
   flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.beneficio-cloud::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #FF9900, #FFB84D);
+  border-radius: 24px 24px 0 0;
+}
+
+.beneficio-cloud:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12), 0 12px 35px rgba(0, 0, 0, 0.08);
+  border-color: rgba(255, 153, 0, 0.3);
 }
 
 .beneficio-cloud .icono {
-  font-size: 2.5rem;
-  color: #007bff; /* Considera cambiar este color */
-  margin-bottom: 15px;
+  font-size: 3.5rem;
+  color: #FF9900;
+  margin-bottom: 25px;
+  text-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
 }
 
 .beneficio-cloud h3 {
@@ -371,20 +608,38 @@ main, nav, header, section {
 
 /* --- SERVICIOS SECTION: Fondo de imagen con transición --- */
 .services-section {
-  background-color: #f4f4f4; /* Fondo de respaldo si la imagen no carga */
+  background-color: #f4f4f4;
   padding: 60px 20px;
   text-align: center;
   position: relative;
   z-index: 1;
-  /* --- FONDO DE IMAGEN PARA ESTA SECCIÓN --- */
-  background-image: url('fotos/nasa-Q1p7bh3SHj8-unsplash.jpg');
+  background-image: url('images/nasa-Q1p7bh3SHj8-unsplash.jpg');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover; /* Cubrirá la sección, recortando si es necesario */
-  color: #333; /* Color del texto (se mantendrá) */
-  /* --- TRANSICIÓN: Opacidad inicial y transición --- */
-  opacity: 0; /* Inicialmente invisible */
-  transition: opacity 1s ease-out; /* Transición de 1 segundo */
+  background-size: cover;
+  color: #333;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+/* Responsive para services section */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 40px 15px;
+  }
+
+  .services-section h2 {
+    font-size: 2rem;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
 }
 
 /* Clase para cuando la sección de servicios es visible */
@@ -396,8 +651,8 @@ main, nav, header, section {
 .services-section h2 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #fff; /* Cambiado a blanco para mejorar legibilidad sobre la imagen */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra de texto sutil */
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .services {
@@ -408,47 +663,202 @@ main, nav, header, section {
   margin: auto;
 }
 
-/* --- FLEXBOX PARA ALINEAR BOTÓN ABAJO EN TARJETAS DE SERVICIOS --- */
 .card {
-  /* --- FONDO DE TARJETA: Opacidad reducida para difuminar --- */
-  background-color: rgba(255, 255, 255, 0.8); /* Opacidad reducida a 0.8 (antes 0.9) */
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  border-color: #FF9900;
+}
+
+.card.featured {
+  border-color: #FF9900;
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #FF9900;
+  margin-bottom: 20px;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
   text-align: left;
-  display: flex; /* Añadido */
-  flex-direction: column; /* Añadido */
+}
+
+.service-features li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.service-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #FF9900;
+  font-weight: bold;
+}
+
+.discount {
+  color: #e53935;
+  font-size: 0.9rem;
+  font-weight: normal;
 }
 
 .card h3 {
   margin-bottom: 10px;
-  color: #0ACF83;
+  color: #FF9900;
 }
 
 .card .price {
-  font-weight: bold;
-  color: #333;
+  font-weight: 600;
+  color: #FF9900;
   margin: 15px 0;
-  /* --- ALINEAR PRECIOS ABAJO --- */
-  margin-top: auto; /* Empuja el precio hacia la parte inferior */
+  font-size: 0.95rem;
+  line-height: 1.4;
+  background: rgba(255, 153, 0, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #FF9900;
 }
 
 /* --- ALINEAR BOTÓN ABAJO EN TARJETAS DE SERVICIOS --- */
 .card .btn-secondary.btn-small {
-    margin-top: 15px; /* Espacio entre el precio y el botón */
+    margin-top: auto; /* Esto empuja el botón hacia la parte inferior */
 }
 
 
-/* --- SOBRE MÍ SECTION --- */
-.about-me-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 60px 20px;
-  background-color: #fff; /* Fondo blanco */
+/* --- ABOUT US SECTION --- */
+.about-us-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
   color: #333;
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.about-us-section.is-visible {
+  opacity: 1;
+}
+
+.aws-partnership {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.aws-partnership h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.aws-logo-about {
+  height: 80px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+}
+
+.team-member {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.member-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #FF9900;
+  object-fit: cover;
+}
+
+.member-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.member-info h4 {
+  font-size: 1.2rem;
+  color: #FF9900;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.certifications-mini {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.cert-badge {
+  background: linear-gradient(135deg, #FF9900, #FFB84D);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Responsive para about us section */
+@media (max-width: 768px) {
+  .team-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-member {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+    align-items: center;
+  }
+  
+  .member-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .member-image img {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 .about-me-image {
@@ -484,95 +894,301 @@ main, nav, header, section {
   margin-bottom: 15px;
 }
 
-/* --- CERTIFICACIONES SECTION --- */
+/* --- CERTIFICACIONES SECTION MODERNIZADA --- */
 .certifications {
-  background-color: #f4f4f4; /* Fondo gris claro */
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   text-align: center;
-  padding: 50px 20px;
+  padding: 100px 20px;
   position: relative;
   z-index: 1;
+  color: white;
 }
 
 .certifications h2 {
-  font-size: 2.2rem;
-  margin-bottom: 30px;
-  color: #333;
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 60px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .cert-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cert-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 180px;
+}
+
+.cert-item:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .cert-logos img {
   height: 80px;
+  width: auto;
   object-fit: contain;
+  filter: brightness(1.1);
+  transition: transform 0.3s ease;
 }
+
+.cert-item:hover img {
+  transform: scale(1.1);
+}
+
+.cert-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Responsive para certifications */
+@media (max-width: 768px) {
+  .certifications {
+    padding: 60px 15px;
+  }
+
+  .certifications h2 {
+    font-size: 2.2rem;
+  }
+
+  .cert-logos {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 400px;
+  }
+
+  .cert-item {
+    padding: 20px 15px;
+    justify-content: center;
+    min-height: 140px;
+  }
+
+  .cert-logos img {
+    height: 60px;
+  }
+}
+
+
+
+
 
 /* --- FOOTER REDISEÑADO --- */
 footer {
-  background-color: #222; /* Fondo gris oscuro más profundo */
-  color: #eee; /* Color de texto ligeramente más claro */
-  padding: 60px 20px; /* Aumentado el padding */
-  display: flex; /* Usaremos Flexbox para la estructura principal */
-  flex-direction: column; /* Elementos apilados verticalmente */
-  align-items: center; /* Centrar contenido horizontalmente */
+  background-color: #222;
+  color: #eee;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   z-index: 1;
-  border-top: 5px solid #0ACF83; /* Borde superior de acento */
+  border-top: 5px solid #FF9900;
 }
 
-/* Contenedor superior (Contacto y quizás iconos sociales) */
+/* Responsive para footer */
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 15px;
+  }
+
+  .footer-contact-rediseñada h2 {
+    font-size: 1.6rem;
+  }
+
+  .footer-contact-rediseñada .cta-button.small {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .footer-social-bottom a img {
+    height: 40px;
+  }
+}
+
+/* Contenedor superior modernizado */
 .footer-top {
     display: flex;
-    flex-direction: column; /* Apilados en móvil */
+    flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1000px; /* Ancho máximo similar al contenido principal */
-    margin-bottom: 30px; /* Espacio debajo de esta sección */
-    padding-bottom: 20px;
-    border-bottom: 1px solid #555; /* Separador visual */
-    text-align: center; /* Centrar texto en móvil */
+    max-width: 800px;
+    margin-bottom: 40px;
+    padding: 50px 30px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
 }
 
-/* Sección de Contacto rediseñada */
+/* Sección de Contacto modernizada */
 .footer-contact-rediseñada {
-    margin-bottom: 20px; /* Espacio debajo si hay iconos sociales en .footer-top */
+    width: 100%;
+    text-align: center;
 }
 
 .footer-contact-rediseñada h2 {
-    font-size: 2rem; /* Tamaño de título */
-    margin-bottom: 10px;
-    color: #fff; /* Color blanco para el título */
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 .footer-contact-rediseñada p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 20px; /* Espacio antes del botón */
-    max-width: 600px; /* Limitar ancho del párrafo */
-    margin-inline: auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    width: 100%;
 }
 
-/* Estilo para el botón "Contactar por Email" dentro de footer-contact-rediseñada */
+.footer-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Botón de contacto modernizado */
 .footer-contact-rediseñada .cta-button.small {
     display: inline-block;
-    padding: 10px 25px; /* Ajustar padding */
-    background-color: #e53935; /* Color de botón similar al ejemplo (rojo/rosa) */
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 153, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-contact-rediseñada .cta-button.small::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.footer-contact-rediseñada .cta-button.small:hover::before {
+    left: 100%;
 }
 
 .footer-contact-rediseñada .cta-button.small:hover {
-    background-color: #c62828;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 153, 0, 0.4);
+}
+
+/* Segundo botón del footer */
+.footer-contact-rediseñada .cta-button.small.secondary {
+    background: transparent;
+    border: 2px solid #FF9900;
+    color: #FF9900;
+    box-shadow: none;
+}
+
+.footer-contact-rediseñada .cta-button.small.secondary:hover {
+    background: #FF9900;
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(255, 153, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #FF9900;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
+}
+
+.contact-form textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+
+.combo-offer {
+    background: rgba(255, 153, 0, 0.2) !important;
+    border: 1px solid rgba(255, 153, 0, 0.4) !important;
+    color: #333 !important;
+}
+
+@media (max-width: 768px) {
+    .footer-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-contact-rediseñada .cta-button.small {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 /* --- NUEVA REGLA: Sección centrada para Copyright, Diseñado por, Agenda cita --- */
@@ -590,13 +1206,13 @@ footer {
 }
 
 .footer-centered-info a {
-    color: #0ACF83;
+    color: #FF9900;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-centered-info a:hover {
-    color: #08b773;
+    color: #e6890a;
     text-decoration: underline;
 }
 
@@ -691,237 +1307,376 @@ footer {
 }
 
 
+/* Blog Section Styles */
+.blog-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+  text-align: center;
+}
+
+.blog-section h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.blog-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.blog-carousel-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 153, 0, 0.9);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.blog-nav-btn:hover {
+  background: #FF9900;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.blog-prev {
+  left: 10px;
+}
+
+.blog-next {
+  right: 10px;
+}
+
+.blog-carousel {
+  display: flex;
+  gap: 30px;
+  animation: blogScrollInfinite 30s linear infinite;
+  width: calc(8 * (350px + 30px)); /* 8 tarjetas * (ancho + gap) */
+}
+
+.blog-card {
+  min-width: 350px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.blog-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.blog-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px 20px 0 0;
+}
+
+.blog-placeholder {
+  display: none;
+}
+
+.blog-content {
+  padding: 30px;
+  text-align: left;
+}
+
+.blog-category {
+  display: inline-block;
+  background: rgba(255, 153, 0, 0.2);
+  color: #FFB84D;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.blog-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  color: white;
+}
+
+.blog-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.blog-link {
+  color: #FF9900;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.blog-link:hover {
+  color: #e6890a;
+}
+
+@keyframes blogScrollInfinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-4 * (350px + 30px))); }
+}
+
+/* Newsletter Section Styles */
+.newsletter-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+}
+
+.newsletter-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.newsletter-content {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.newsletter-content h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+.newsletter-content > p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  margin-bottom: 40px;
+}
+
+.form-group {
+  display: flex;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto 15px;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #FF9900;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.1);
+}
+
+.form-group button {
+  padding: 15px 30px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.newsletter-privacy {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.newsletter-benefits {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.benefit-icon {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .blog-carousel {
+    gap: 20px;
+  }
+  
+  .blog-card {
+    min-width: 300px;
+  }
+  
+  .blog-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .blog-prev {
+    left: 5px;
+  }
+  
+  .blog-next {
+    right: 5px;
+  }
+  
+  .newsletter-content {
+    padding: 40px 20px;
+  }
+  
+  .form-group {
+    flex-direction: column;
+  }
+  
+  .newsletter-benefits {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Cookie Consent Styles */
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: slideUp 0.5s ease-out;
+}
+
+.cookie-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.cookie-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.cookie-content p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .cookie-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cookie-buttons .btn-primary,
+  .cookie-buttons .btn-secondary {
+    width: 200px;
+  }
+}
+
 /* Media Query para pantallas más grandes (ajustar diseño en escritorio) */
 @media (min-width: 768px) {
-    /* --- AJUSTES NAVBAR PARA DESKTOP --- */
-    .hero-navigation {
-        /* Asegura que la posición fija se mantenga en desktop */
-        position: fixed;
-        /* Ajustes de padding si es necesario para desktop */
-        padding: 0 20px; /* Ajustado padding horizontal para que llegue a los bordes */
-        /* Asegura que los elementos se distribuyan horizontalmente */
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        /* Eliminado max-width: 1200px; */
-        max-width: none;
-    }
-
-    .hero-navigation .logo {
-        margin-bottom: 0;
-        flex-shrink: 0;
-    }
-
-    /* --- CONTENEDOR PARA ENLACES Y SOCIAL EN DESKTOP --- */
-    .hero-navigation .nav-and-social {
-        display: flex; /* Contenedor flex */
-        align-items: center; /* Alinear verticalmente al centro */
-        gap: 1.5rem; /* Espacio entre los enlaces de navegación y los iconos sociales */
-        /* Asegurar que este contenedor se alinee a la derecha */
-        margin-left: auto; /* Esto empuja el contenedor a la derecha */
-    }
-
-
-    .hero-navigation .nav-links {
-        display: flex;
-        gap: 1.5rem;
-        /* Eliminado margin-right ya que el gap en .nav-and-social lo maneja */
-        /* margin-right: 1rem; */
-        /* Eliminado flex-grow y justify-content ya que .nav-and-social controla la distribución */
-        flex-grow: 0; /* Asegura que no crezca innecesariamente */
-        justify-content: flex-start; /* Alinea los enlaces al inicio del contenedor flex */
-    }
-
-    .hero-navigation .social-links {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        /* Eliminado flex-shrink */
-        /* flex-shrink: 0; */
-    }
-
-
-    .hero-navigation .nav-links a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 500;
-        transition: color 0.3s ease;
-    }
-
-    .hero-navigation .nav-links a:hover {
-        color: #0ACF83;
-    }
-
-    /* --- AJUSTE PADDING-TOP DEL HERO PARA NAVBAR FIJA EN DESKTOP --- */
-     .hero {
-        /* Este padding-top debe ser igual o ligeramente mayor que la altura de la navbar en desktop */
-        padding-top: 6rem; /* Ajusta este valor si la altura de la navbar en desktop cambia */
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 4rem;
-        min-height: 60vh;
-     }
-
-
-    /* Ajustes generales de padding en secciones para desktop */
-    section {
-        padding: 60px 20px;
-    }
-
-
-    /* Secciones con Grilla (Beneficios y Servicios) */
-    .benefits-grid,
-    .services {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        padding: 20px;
-    }
-
-    .beneficio-cloud,
-    .card {
-        padding: 30px;
-    }
-
-
-    /* Sobre Mí Section */
-    .about-me-section {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .about-me-image {
-        margin-bottom: 0;
-        margin-right: 40px;
-    }
-
-    .about-me-text {
-        padding-left: 40px;
-        text-align: left;
-    }
-
-
-    /* Certificaciones Section */
-    .certifications h2 {
-        font-size: 2.2rem;
-    }
-
-    .cert-logos {
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .cert-logos img {
-        height: 80px;
-    }
-
-    /* --- FOOTER REDISEÑADO --- */
-    footer {
-        background-color: #222;
-        color: #eee;
-        padding: 60px 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        z-index: 1;
-        border-top: 5px solid #0ACF83;
-    }
-
-    /* Contenedor superior (Contacto y quizás iconos sociales) */
     .footer-top {
-        display: flex;
-        flex-direction: column; /* Apilados en móvil */
-        align-items: center;
-        width: 100%;
-        max-width: 1000px; /* Ancho máximo similar al contenido principal */
-        margin-bottom: 30px; /* Espacio debajo de esta sección */
-        padding-bottom: 20px;
-        border-bottom: 1px solid #555; /* Separador visual */
-        text-align: center; /* Centrar texto en móvil */
+        flex-direction: row; /* Lado a lado en escritorio */
+        justify-content: space-between; /* Espacio entre elementos */
+        align-items: flex-start; /* Alinear al inicio */
+        text-align: left; /* Alinear texto a la izquierda */
     }
 
-    /* Sección de Contacto rediseñada */
     .footer-contact-rediseñada {
-        margin-bottom: 20px; /* Espacio debajo si hay iconos sociales en .footer-top */
+        margin-bottom: 0; /* Eliminar margen inferior en escritorio */
     }
 
     .footer-contact-rediseñada h2 {
-        font-size: 2rem; /* Tamaño de título */
-        margin-bottom: 10px;
-        color: #fff; /* Color blanco para el título */
+        font-size: 2.2rem; /* Ajustar tamaño de título en escritorio */
     }
 
-    .footer-contact-rediseñada p {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin-bottom: 20px; /* Espacio antes del botón */
-        max-width: 600px; /* Limitar ancho del párrafo */
-        margin-inline: auto;
-    }
+     .footer-contact-rediseñada p {
+        margin-inline: 0; /* Eliminar margin-inline en escritorio */
+     }
 
-    /* Estilo para el botón "Contactar por Email" dentro de footer-contact-rediseñada */
-    .footer-contact-rediseñada .cta-button.small {
-        display: inline-block;
-        padding: 10px 25px; /* Ajustar padding */
-        background-color: #e53935; /* Color de botón similar al ejemplo (rojo/rosa) */
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .footer-contact-rediseñada .cta-button.small:hover {
-        background-color: #c62828;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    /* --- NUEVA REGLA: Sección centrada para Copyright, Diseñado por, Agenda cita --- */
-    .footer-centered-info {
-        width: 100%; /* Ocupa todo el ancho disponible */
-        max-width: 1000px; /* Limitar ancho como otras secciones */
-        text-align: center; /* Centrar el texto dentro de este div */
-        margin-bottom: 20px; /* Espacio debajo */
-        color: #bbb; /* Color de texto para esta sección */
-        font-size: 0.9rem;
-    }
-
-    .footer-centered-info p {
-        margin-bottom: 5px; /* Espacio entre líneas */
-    }
-
-    .footer-centered-info a {
-        color: #0ACF83;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .footer-centered-info a:hover {
-        color: #08b773;
-        text-decoration: underline;
-    }
-
-
-    /* Sección de enlaces (si añades más columnas de enlaces) */
-    /* Si no tienes más columnas de enlaces, puedes eliminar estas reglas */
-    /*
     .footer-links-section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-        max-width: 1000px;
-        margin-bottom: 30px;
-        gap: 30px;
+        justify-content: space-between; /* Espacio entre columnas de enlaces */
     }
-    */
 
-    /* Contenedor de información rediseñado (Copyright, Diseñado por, Agenda cita) - ELIMINADO/REEMPLAZADO POR .footer-centered-info */
+    /* Contenedor de información rediseñado (Copyright, Diseñado por, Agenda cita) - ELIMINADO/REEMPLAZADO */
     /*
     .footer-info-rediseñada {
-        text-align: center;
+        text-align: left;
     }
     .footer-info-rediseñada p {
         margin-bottom: 8px;
@@ -939,623 +1694,14 @@ footer {
     }
     */
 
-    /* Estilos si añades más columnas de enlaces (ej. Aviso Legal) */
-    /*
-    .footer-links-col ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .footer-links-col ul li {
-        margin-bottom: 8px;
-    }
-    .footer-links-col ul li a {
-         color: #eee;
-         text-decoration: none;
-         font-size: 0.9rem;
-         transition: color 0.3s ease;
-}
-.footer-links-col ul li a:hover {
-    color: #0ACF83;
-    text-decoration: underline;
-}
-*/
+    /* Si añades columnas de enlaces, ajusta su alineación aquí */
+    /* .footer-links-col { text-align: left; } */
 
-
-    /* Sección de iconos sociales (si están abajo) */
     .footer-social-bottom {
-        display: flex;
-        justify-content: center; /* Centrar iconos */
-        gap: 15px; /* Espacio entre iconos */
-        margin-bottom: 20px; /* Espacio debajo */
+        justify-content: flex-start; /* Alinear iconos a la izquierda si están en una columna */
+        /* Si están en una fila separada abajo, mantener justify-content: center; */
     }
-
-    .footer-social-bottom a img {
-      /* --- TAMAÑO DEL ICONO SOCIAL EN EL FOOTER: Aumentado a 50px --- */
-      height: 50px; /* Ajustado a 50px */
-      width: auto;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .footer-social-bottom a:hover img {
-        opacity: 0.8;
-        transform: scale(1.1);
-    }
-
-
-    /* Frase de confianza rediseñada */
-    .footer-trust-rediseñada {
-        width: 100%;
-        text-align: center; /* Centrar texto */
-        font-size: 1rem;
-        color: #bbb; /* Color más claro */
-        margin-top: 10px; /* Espacio arriba */
-    }
-
-
-    /* Media Query para pantallas más grandes (ajustar diseño en escritorio) */
-    @media (min-width: 768px) {
-        /* --- AJUSTES NAVBAR PARA DESKTOP --- */
-        .hero-navigation {
-            /* Asegura que la posición fija se mantenga en desktop */
-            position: fixed;
-            /* Ajustes de padding si es necesario para desktop */
-            padding: 0 20px; /* Ajustado padding horizontal para que llegue a los bordes */
-            /* Asegura que los elementos se distribuyan horizontalmente */
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            /* Eliminado max-width: 1200px; */
-            max-width: none;
-        }
-
-        .hero-navigation .logo {
-            margin-bottom: 0;
-            flex-shrink: 0;
-        }
-
-        /* --- CONTENEDOR PARA ENLACES Y SOCIAL EN DESKTOP --- */
-        .hero-navigation .nav-and-social {
-            display: flex; /* Contenedor flex */
-            align-items: center; /* Alinear verticalmente al centro */
-            gap: 1.5rem; /* Espacio entre los enlaces de navegación y los iconos sociales */
-            /* Asegurar que este contenedor se alinee a la derecha */
-            margin-left: auto; /* Esto empuja el contenedor a la derecha */
-        }
-
-
-        .hero-navigation .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            /* Eliminado margin-right ya que el gap en .nav-and-social lo maneja */
-            /* margin-right: 1rem; */
-            /* Eliminado flex-grow y justify-content ya que .nav-and-social controla la distribución */
-            flex-grow: 0; /* Asegura que no crezca innecesariamente */
-            justify-content: flex-start; /* Alinea los enlaces al inicio del contenedor flex */
-        }
-
-        .hero-navigation .social-links {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            /* Eliminado flex-shrink */
-            /* flex-shrink: 0; */
-        }
-
-
-        .hero-navigation .nav-links a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .hero-navigation .nav-links a:hover {
-            color: #0ACF83;
-        }
-
-        /* --- AJUSTE PADDING-TOP DEL HERO PARA NAVBAR FIJA EN DESKTOP --- */
-         .hero {
-            /* Este padding-top debe ser igual o ligeramente mayor que la altura de la navbar en desktop */
-            padding-top: 6rem; /* Ajusta este valor si la altura de la navbar en desktop cambia */
-            padding-left: 2rem;
-            padding-right: 2rem;
-            padding-bottom: 4rem;
-            min-height: 60vh;
-         }
-
-
-        /* Ajustes generales de padding en secciones para desktop */
-        section {
-            padding: 60px 20px;
-        }
-
-
-        /* Secciones con Grilla (Beneficios y Servicios) */
-        .benefits-grid,
-        .services {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
-
-        .beneficio-cloud,
-        .card {
-            padding: 30px;
-        }
-
-
-        /* Sobre Mí Section */
-        .about-me-section {
-            flex-direction: row;
-            align-items: center;
-        }
-
-        .about-me-image {
-            margin-bottom: 0;
-            margin-right: 40px;
-        }
-
-        .about-me-text {
-            padding-left: 40px;
-            text-align: left;
-        }
-
-
-        /* Certificaciones Section */
-        .certifications h2 {
-            font-size: 2.2rem;
-        }
-
-        .cert-logos {
-            flex-direction: row;
-            gap: 20px;
-        }
-
-        .cert-logos img {
-            height: 80px;
-        }
-
-        /* --- FOOTER REDISEÑADO --- */
-        footer {
-            background-color: #222;
-            color: #eee;
-            padding: 60px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-            border-top: 5px solid #0ACF83;
-        }
-
-        /* Contenedor superior (Contacto y quizás iconos sociales) */
-        .footer-top {
-            display: flex;
-            flex-direction: column; /* Apilados en móvil */
-            align-items: center;
-            width: 100%;
-            max-width: 1000px; /* Ancho máximo similar al contenido principal */
-            margin-bottom: 30px; /* Espacio debajo de esta sección */
-            padding-bottom: 20px;
-            border-bottom: 1px solid #555; /* Separador visual */
-            text-align: center; /* Centrar texto en móvil */
-        }
-
-        /* Sección de Contacto rediseñada */
-        .footer-contact-rediseñada {
-            margin-bottom: 20px; /* Espacio debajo si hay iconos sociales en .footer-top */
-        }
-
-        .footer-contact-rediseñada h2 {
-            font-size: 2rem; /* Tamaño de título */
-            margin-bottom: 10px;
-            color: #fff; /* Color blanco para el título */
-        }
-
-        .footer-contact-rediseñada p {
-            font-size: 1rem;
-            line-height: 1.5;
-            margin-bottom: 20px; /* Espacio antes del botón */
-            max-width: 600px; /* Limitar ancho del párrafo */
-            margin-inline: auto;
-        }
-
-        /* Estilo para el botón "Contactar por Email" dentro de footer-contact-rediseñada */
-        .footer-contact-rediseñada .cta-button.small {
-            display: inline-block;
-            padding: 10px 25px; /* Ajustar padding */
-            background-color: #e53935; /* Color de botón similar al ejemplo (rojo/rosa) */
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .footer-contact-rediseñada .cta-button.small:hover {
-            background-color: #c62828;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        /* --- NUEVA REGLA: Sección centrada para Copyright, Diseñado por, Agenda cita --- */
-        .footer-centered-info {
-            width: 100%; /* Ocupa todo el ancho disponible */
-            max-width: 1000px; /* Limitar ancho como otras secciones */
-            text-align: center; /* Centrar el texto dentro de este div */
-            margin-bottom: 20px; /* Espacio debajo */
-            color: #bbb; /* Color de texto para esta sección */
-            font-size: 0.9rem;
-        }
-
-        .footer-centered-info p {
-            margin-bottom: 5px; /* Espacio entre líneas */
-        }
-
-        .footer-centered-info a {
-            color: #0ACF83;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-centered-info a:hover {
-            color: #08b773;
-            text-decoration: underline;
-        }
-
-
-        /* Sección de enlaces (si añades más columnas de enlaces) */
-        /* Si no tienes más columnas de enlaces, puedes eliminar estas reglas */
-        /*
-        .footer-links-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-            max-width: 1000px;
-            margin-bottom: 30px;
-            gap: 30px;
-        }
-        */
-
-        /* Contenedor de información rediseñado (Copyright, Diseñado por, Agenda cita) - ELIMINADO/REEMPLAZADO POR .footer-centered-info */
-        /*
-        .footer-info-rediseñada {
-            text-align: center;
-        }
-        .footer-info-rediseñada p {
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            color: #bbb;
-        }
-        .footer-info-rediseñada a {
-            color: #0ACF83;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer-info-rediseñada a:hover {
-            color: #08b773;
-            text-decoration: underline;
-        }
-        */
-
-        /* Estilos si añades más columnas de enlaces (ej. Aviso Legal) */
-        /*
-        .footer-links-col ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .footer-links-col ul li {
-            margin-bottom: 8px;
-        }
-        .footer-links-col ul li a {
-             color: #eee;
-             text-decoration: none;
-             font-size: 0.9rem;
-             transition: color 0.3s ease;
 }
-.footer-links-col ul li a:hover {
-    color: #0ACF83;
-    text-decoration: underline;
-}
-*/
-
-
-        /* Sección de iconos sociales (si están abajo) */
-        .footer-social-bottom {
-            display: flex;
-            justify-content: center; /* Centrar iconos */
-            gap: 15px; /* Espacio entre iconos */
-            margin-bottom: 20px; /* Espacio debajo */
-        }
-
-        .footer-social-bottom a img {
-          /* --- TAMAÑO DEL ICONO SOCIAL EN EL FOOTER: Aumentado a 50px --- */
-          height: 50px; /* Ajustado a 50px */
-          width: auto;
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .footer-social-bottom a:hover img {
-            opacity: 0.8;
-            transform: scale(1.1);
-        }
-
-
-        /* Frase de confianza rediseñada */
-        .footer-trust-rediseñada {
-            width: 100%;
-            text-align: center; /* Centrar texto */
-            font-size: 1rem;
-            color: #bbb; /* Color más claro */
-            margin-top: 10px; /* Espacio arriba */
-        }
-
-
-        /* Media Query para pantallas más grandes (ajustar diseño en escritorio) */
-        @media (min-width: 768px) {
-            /* ... estilos de desktop ... */
-
-            /* Contenedor superior (Contacto y quizás iconos sociales) */
-            .footer-top {
-                /* ... otras propiedades ... */
-                /* Asegura que la sección de contacto esté a la izquierda */
-                justify-content: flex-start; /* Alinea los elementos al inicio */
-                /* Si hay otros elementos en footer-top, puedes usar gap o margin-right para separarlos */
-                gap: 40px; /* Ejemplo: espacio entre contacto y otros elementos en footer-top */
-            }
-
-            /* Sección de Contacto rediseñada */
-            .footer-contact-rediseñada {
-                 /* Eliminar flex-grow si se había añadido antes para que no ocupe espacio innecesario */
-                 flex-grow: 0;
-                 /* Puedes ajustar un ancho si quieres que ocupe una proporción específica */
-                 /* flex-basis: 400px; */
-                 text-align: left; /* Asegurar alineación a la izquierda */
-            }
-
-            .footer-contact-rediseñada h2 {
-                font-size: 2.2rem;
-                margin-bottom: 10px;
-                color: #fff;
-            }
-
-            .footer-contact-rediseñada p {
-                font-size: 1rem;
-                line-height: 1.5;
-                margin-bottom: 20px;
-                max-width: 600px;
-                margin-inline: 0;
-            }
-
-            .footer-contact-rediseñada .cta-button.small {
-                display: inline-block;
-                padding: 10px 25px;
-                background-color: #e53935;
-                color: #fff;
-                border: none;
-                border-radius: 5px;
-                text-decoration: none;
-                font-weight: bold;
-                transition: background-color 0.3s ease, box-shadow 0.3s ease;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            }
-
-            .footer-contact-rediseñada .cta-button.small:hover {
-                background-color: #c62828;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            }
-
-            /* ... resto de estilos de desktop ... */
-
-        }
-
-        /* --- MEDIA QUERIES PARA RESPONSIVE --- */
-        /* Estilos para pantallas pequeñas (hasta 767px de ancho) */
-        @media (max-width: 767px) {
-
-            /* Ajustes generales de padding en secciones para móvil */
-            section {
-                padding: 30px 15px;
-            }
-
-            /* Navbar */
-            .hero-navigation {
-                flex-direction: column; /* Apilar elementos verticalmente */
-                align-items: center; /* Centrar elementos */
-                padding: 10px 15px; /* Ajustar padding */
-                position: static; /* No fija en móvil */
-                /* Eliminado max-width en móvil */
-                max-width: none;
-                width: 100%; /* Ocupar todo el ancho */
-            }
-
-            .hero-navigation .logo {
-                margin-bottom: 10px; /* Espacio debajo del logo */
-                /* Asegurar que el logo no se desborde */
-                max-width: 100%;
-                height: auto;
-            }
-
-            /* --- CONTENEDOR PARA ENLACES Y SOCIAL EN MÓVIL --- */
-            .hero-navigation .nav-and-social {
-                flex-direction: column; /* Apilar enlaces y social verticalmente */
-                gap: 1rem; /* Espacio entre enlaces/social */
-                margin-left: 0; /* Eliminar margin-left */
-                width: 100%; /* Ocupar todo el ancho */
-                align-items: center; /* Centrar contenido */
-            }
-
-
-            .hero-navigation .nav-links {
-                flex-direction: column; /* Apilar enlaces verticalmente */
-                gap: 0.5rem; /* Reducir espacio entre enlaces */
-                margin-right: 0; /* Eliminar margen derecho */
-                /* margin-bottom: 10px; */ /* Espacio debajo de los enlaces */
-                align-items: center; /* Centrar enlaces */
-            }
-
-            .hero-navigation .social-links {
-                margin-bottom: 0; /* Eliminar margen inferior */
-                /* Asegurar que los iconos sociales no se desborden */
-                max-width: 100%;
-                justify-content: center; /* Centrar iconos */
-            }
-
-            .hero-navigation .social-links a img {
-                 height: 30px; /* Ajustar tamaño de iconos en móvil */
-            }
-
-
-            .hero-navigation .nav-links a {
-                 /* Asegurar que los enlaces no se desborden */
-                 max-width: 100%;
-                 overflow: hidden;
-                 text-overflow: ellipsis; /* Añadir puntos suspensivos si el texto es muy largo */
-                 white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
-            }
-
-
-            /* Hero Section */
-            .hero {
-                /* --- AJUSTE PADDING-TOP DEL HERO PARA NAVBAR ESTÁTICA EN MÓVIL --- */
-                /* Este padding-top debe ser mayor que la altura de la navbar apilada en móvil */
-                padding-top: 180px; /* Aumentado el padding-top. Ajusta este valor si sigue habiendo solapamiento. */
-                padding-left: 15px;
-                padding-right: 15px;
-                padding-bottom: 30px;
-                min-height: auto;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero h2 {
-                font-size: 1.4rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 80%;
-                margin: 0 auto;
-            }
-
-
-            /* Secciones con Grilla (Beneficios y Servicios) */
-            .benefits-grid,
-            .services {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 0;
-            }
-
-            .beneficio-cloud,
-            .card {
-                padding: 20px;
-            }
-
-            /* Sobre Mí Section */
-            .about-me-section {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .about-me-image {
-                margin-bottom: 20px;
-                margin-right: 0; /* Eliminar margen derecho */
-            }
-
-            .about-me-text {
-                padding-left: 0;
-                text-align: center;
-            }
-
-            .about-me-text h2 {
-                font-size: 1.8rem;
-            }
-
-            .about-me-text h3 {
-                font-size: 1rem;
-            }
-
-            /* Certificaciones Section */
-            .certifications h2 {
-                font-size: 1.8rem;
-            }
-
-            .cert-logos {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .cert-logos img {
-                height: 60px;
-            }
-
-
-            /* Footer */
-            footer {
-                padding: 40px 15px;
-            }
-
-            .footer-top,
-            .footer-links-section,
-            .footer-social-bottom,
-            .footer-centered-info,
-            .footer-trust-rediseñada {
-                margin-bottom: 20px;
-                padding-bottom: 15px;
-                border-bottom: 1px solid #555;
-                width: 100%;
-                max-width: none;
-                text-align: center;
-            }
-
-            .footer-trust-rediseñada {
-                border-bottom: none;
-                margin-bottom: 0;
-                padding-bottom: 0;
-            }
-
-            .footer-contact-rediseñada h2 {
-                font-size: 1.6rem;
-            }
-
-            .footer-contact-rediseñada p {
-                font-size: 0.9rem;
-            }
-
-            .footer-centered-info p,
-            .footer-info-rediseñada p {
-                font-size: 0.8rem;
-            }
-
-                 .footer-trust-rediseñada {
-                    font-size: 0.9rem;
-                 }
-
-            }
-        }
-
-
-
-
-
-
-
-
 
 
 
